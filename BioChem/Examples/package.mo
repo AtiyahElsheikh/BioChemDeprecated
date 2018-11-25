@@ -2805,8 +2805,8 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         model GlucoseRenalExcretion
           extends BioChem.Compartments.Compartment(V(
                                                    start = 1.0));
-        BioChem.Interfaces.Nodes.ProductConnector productConnector1 annotation
-          (Placement(transformation(origin={-120,-4.44089e-16}, extent={{-10,-10},
+        BioChem.Interfaces.Nodes.ProductConnector productConnector1 annotation (
+           Placement(transformation(origin={-120,-4.44089e-16}, extent={{-10,-10},
                   {10,10}}), iconTransformation(origin={-110,3.33067e-16},
                 extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.RenalReaction renalReaction1 annotation(Placement(transformation(origin={-90,3.88578e-16}, extent={{-10,10},{10,-10}})));
@@ -2851,11 +2851,11 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           BioChem.Substances.Substance G_t(c(
                                            start = 130))
                                                         annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
-        BioChem.Interfaces.Nodes.SubstrateConnector U_idf_connector annotation
-          (Placement(transformation(origin={120,40}, extent={{-10,-10},{10,10}}),
+        BioChem.Interfaces.Nodes.SubstrateConnector U_idf_connector annotation (
+           Placement(transformation(origin={120,40}, extent={{-10,-10},{10,10}}),
               iconTransformation(origin={110,60}, extent={{-10,-10},{10,10}})));
-        BioChem.Interfaces.Nodes.SubstrateConnector U_idm_connector annotation
-          (Placement(transformation(origin={120,-40}, extent={{-10,-10},{10,10}}),
+        BioChem.Interfaces.Nodes.SubstrateConnector U_idm_connector annotation (
+           Placement(transformation(origin={120,-40}, extent={{-10,-10},{10,10}}),
               iconTransformation(origin={110,-63.4979}, extent={{-10,-10},{10,
                   10}})));
         equation
