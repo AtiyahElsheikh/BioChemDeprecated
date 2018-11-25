@@ -2,33 +2,33 @@ within BioChem;
 package Units "Units used in BioChem"
   extends Icons.Library;
 
-  type VolumetricReactionRate =Real(quantity="Volumetric reaction rate", unit="mol/(s.l)") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type VolumetricReactionRate = Modelica.Icons.TypeReal(quantity="Volumetric reaction rate", unit="mol/(s.l)");
 
-  type VolumeChangeConstant =Real(quantity="Volume change constant", unit="l/s") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type VolumeChangeConstant = Modelica.Icons.TypeReal(quantity="Volume change constant", unit="l/s");
 
   type Volume =Modelica.SIunits.Conversions.NonSIunits.Volume_litre annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
 
-  type StoichiometricCoefficient =Real(quantity="Stoichiometric coefficient", unit="1") "" annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type StoichiometricCoefficient = Modelica.Icons.TypeReal(quantity="Stoichiometric coefficient", unit="1") "";
 
-  type ReactionRate =Real(quantity="Reaction rate", unit="mol/s") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type ReactionRate = Modelica.Icons.TypeReal(quantity="Reaction rate", unit="mol/s");
 
-  type ReactionCoefficient =Real(quantity="Reaction coefficient", unit="1") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type ReactionCoefficient = Modelica.Icons.TypeReal(quantity="Reaction coefficient", unit="1");
 
   type Pressure =Modelica.SIunits.Pressure annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
 
-  type MolarFlowRate =Real(quantity="Molar flow rate", unit="mol/s") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type MolarFlowRate = Modelica.Icons.TypeReal(quantity="Molar flow rate", unit="mol/s");
 
   type IonicCharge =Integer(quantity="Ionic charge", unit="1") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
 
-  type DilutionRate =Real(quantity="Dilution rate", unit="/s") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type DilutionRate = Modelica.Icons.TypeReal(quantity="Dilution rate", unit="/s");
 
-  type Concentration =Real(quantity="Concentration", unit="mol/l", min=0) annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type Concentration = Modelica.Icons.TypeReal(quantity="Concentration", unit="mol/l", min=0);
 
   type Celcius =Modelica.SIunits.Conversions.NonSIunits.Temperature_degC annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
 
-  type AmountOfSubstance =Real(quantity="AmountOfSubstance", unit="mol", min=0) annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type AmountOfSubstance = Modelica.Icons.TypeReal(quantity="AmountOfSubstance", unit="mol", min=0);
 
-  type EquilibriumCoefficient =Real(quantity="Equilibrium coefficient", unit="1") "" annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type EquilibriumCoefficient = Modelica.Icons.TypeReal(quantity="Equilibrium coefficient", unit="1") "";
 
   annotation(Documentation(info="<html>
 <h1>Units</h1>
