@@ -6,7 +6,9 @@ package Substances
     BioChem.Units.Concentration c( stateSelect=StateSelect.prefer) "Current concentration of substance (mM)";
     BioChem.Units.MolarFlowRate rNet "Net flow rate of substance into the node";
     BioChem.Units.AmountOfSubstance n( stateSelect=StateSelect.prefer) "Number of moles of substance in pool (mol)";
-    BioChem.Interfaces.Nodes.SubstanceConnector n1 annotation(Placement(transformation(extent={{-10,-10},{10,10}}), iconTransformation(extent={{-16,-16},{16,16}})));
+  BioChem.Interfaces.Nodes.SubstanceConnector n1 annotation (Placement(
+        transformation(extent={{-10,-10},{10,10}}), iconTransformation(extent={
+            {-16,-16},{16,16}})));
 protected
     outer BioChem.Units.Volume V "Compartment volume";
   equation
@@ -27,7 +29,9 @@ Corresponds to SBML species changed by SBML rules and with the <em>boundaryCondi
     input BioChem.Units.Concentration c "Current concentration of substance (mM)";
     BioChem.Units.MolarFlowRate rNet "Net flow rate of substance into the node";
     BioChem.Units.AmountOfSubstance n "Number of moles of substance in pool (mol)";
-    BioChem.Interfaces.Nodes.SubstanceConnector n1 annotation(Placement(transformation(extent={{-10,-10},{10,10}}), iconTransformation(extent={{-16,-16},{16,16}})));
+  BioChem.Interfaces.Nodes.SubstanceConnector n1 annotation (Placement(
+        transformation(extent={{-10,-10},{10,10}}), iconTransformation(extent={
+            {-16,-16},{16,16}})));
 protected
     outer BioChem.Units.Volume V "Compartment volume";
   equation

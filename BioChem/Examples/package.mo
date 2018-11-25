@@ -37,7 +37,14 @@ package Examples "Some examples of BioChem models"
     Substances.Substance irPMemb2Ins(c(
                                      start = 0))
                                                 "Phosphorylated insulin receptor at plasma membrane, two insulin bound" annotation(Placement(transformation(origin={50,30}, extent={{-10,-10},{10,10}})));
-    Interfaces.Nodes.SubstanceConnector sInsulin "Connector for insulin" annotation(Placement(transformation(origin={0.0,100.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180), iconTransformation(origin={-0.0,115.0}, extent={{-15.0,-15.0},{15.0,15.0}}, rotation=180)));
+  Interfaces.Nodes.SubstanceConnector sInsulin "Connector for insulin"
+    annotation (Placement(transformation(
+        origin={0.0,100.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=180), iconTransformation(
+        origin={-0.0,115.0},
+        extent={{-15.0,-15.0},{15.0,15.0}},
+        rotation=180)));
   equation
     connect(sInsulin,Insulin.n1) annotation(Line(points={{0.0,100.0},{0.0,70.04},{-70.0,70.0}}, smooth=Smooth.Bezier));
     connect(irPInt2Ins.n1,uur3.s1) annotation(Line(points={{-4,-10},{-4.267,10.24},{8.75,10}}, smooth=Smooth.Bezier));
@@ -117,9 +124,22 @@ package Examples "Some examples of BioChem models"
     Substances.Substance DHAP(c(
                               start = 0))
                                          "Dihydroxyacetone phosphate" annotation(Placement(transformation(origin={15,18.75}, extent={{-7.5,-7.5},{7.5,7.5}})));
-    BioChem.Interfaces.Nodes.SubstanceConnector sGlucose annotation(Placement(transformation(origin={0.0,147.5}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180), iconTransformation(origin={0.0,115.0}, extent={{-15.0,-15.0},{15.0,15.0}}, rotation=180)));
-    Interfaces.Nodes.SubstanceConnector sPyruvate annotation(Placement(transformation(origin={-22.5,-147.5}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={-27.5,-112.5}, extent={{-12.5,-12.5},{12.5,12.5}})));
-    Interfaces.Nodes.SubstanceConnector sPyruvate4 annotation(Placement(transformation(origin={22.5,-147.5}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={27.5,-112.5}, extent={{-12.5,-12.5},{12.5,12.5}})));
+  BioChem.Interfaces.Nodes.SubstanceConnector sGlucose annotation (Placement(
+        transformation(
+        origin={0.0,147.5},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=180), iconTransformation(
+        origin={0.0,115.0},
+        extent={{-15.0,-15.0},{15.0,15.0}},
+        rotation=180)));
+  Interfaces.Nodes.SubstanceConnector sPyruvate annotation (Placement(
+        transformation(origin={-22.5,-147.5}, extent={{-10.0,-10.0},{10.0,10.0}}),
+        iconTransformation(origin={-27.5,-112.5}, extent={{-12.5,-12.5},{12.5,
+            12.5}})));
+  Interfaces.Nodes.SubstanceConnector sPyruvate4 annotation (Placement(
+        transformation(origin={22.5,-147.5}, extent={{-10.0,-10.0},{10.0,10.0}}),
+        iconTransformation(origin={27.5,-112.5}, extent={{-12.5,-12.5},{12.5,
+            12.5}})));
   equation
     connect(Pyruvate.n1,sPyruvate4) annotation(Line(points={{0.0,-138.75},{22.5,-139.4},{22.5,-147.5}}, smooth=Smooth.Bezier));
     connect(sPyruvate,Pyruvate.n1) annotation(Line(points={{-22.5,-147.5},{-22.5,-138.8},{0.0,-138.75}}, smooth=Smooth.Bezier));
@@ -826,7 +846,10 @@ See
       centralMetabolism.cytosol.vgph_ vgph(bamp=bamp, kh=kh) "vgph" annotation(Placement(transformation(origin={-120.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       centralMetabolism.cytosol.jatpase_ jatpase(badp=badp) "jatpase" annotation(Placement(transformation(origin={-40.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
       centralMetabolism.cytosol.jck_ jck(badp=badp) "jck" annotation(Placement(transformation(origin={-70.0,30.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
-      BioChem.Interfaces.Nodes.SubstanceConnector node_LAC annotation(Placement(transformation(origin={140.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={125.0384,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector node_LAC annotation (Placement(
+          transformation(origin={140.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={125.0384,0.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       centralMetabolism.mitochondria mitochondria(badp=badp) annotation(Placement(transformation(origin={100.0,40.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       input Real bamp;
       input Real badp;
@@ -1060,11 +1083,23 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
                                                start = 0))
                                                           "NAD" annotation(Placement(transformation(origin={20.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       centralMetabolism.mitochondria.jox_ jox(badp=badp) "jox" annotation(Placement(transformation(origin={-0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Interfaces.Nodes.SubstrateConnector node_ADP annotation(Placement(transformation(origin={-20.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={-125.8208,-47.131}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Interfaces.Nodes.SubstanceConnector node_NADHm annotation(Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={125.7398,50.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstrateConnector node_ADP annotation (Placement(
+          transformation(origin={-20.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={-125.8208,-47.131}, extent={{-10.0,-10.0},
+              {10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector node_NADHm annotation (
+        Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}}), iconTransformation(origin={125.7398,50.0}, extent={
+              {-10.0,-10.0},{10.0,10.0}})));
       centralMetabolism.mitochondria.vn_ vn "vn" annotation(Placement(transformation(origin={-50.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Interfaces.Nodes.SubstrateConnector node_NADH annotation(Placement(transformation(origin={-80.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={126.1247,-50.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Interfaces.Nodes.ProductConnector node_ATP annotation(Placement(transformation(origin={20.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={-125.999,50.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstrateConnector node_NADH annotation (Placement(
+          transformation(origin={-80.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={126.1247,-50.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}})));
+    BioChem.Interfaces.Nodes.ProductConnector node_ATP annotation (Placement(
+          transformation(origin={20.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={-125.999,50.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}})));
       Real badp;
     equation
       connect(jox.p1,NADm.n1) annotation(Line(origin={14.1667,8.3333}, points={{-2.9167,-3.3333},{-2.9167,1.6667},{5.8333,1.6667}}, smooth=Smooth.Bezier));
@@ -1311,16 +1346,28 @@ The simulation results are shown in the
       BioChem.Examples.CircadianOscillator.Nucleus.y3_ y3(c(start=1.1)) "PER2_CRY_complex_nucleus" annotation(Placement(transformation(origin={70.0,-50.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
       BioChem.Examples.CircadianOscillator.Nucleus.y6_ y6(c(start=1)) "BMAL1_nucleus" annotation(Placement(transformation(origin={-10.0,50.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-180)));
       BioChem.Examples.CircadianOscillator.Nucleus.y7_ y7(c(start=1.05)) "Active BMAL1" annotation(Placement(transformation(origin={-45.6104,-16.1148}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-180)));
-      BioChem.Interfaces.Nodes.SubstanceConnector y3_node annotation(Placement(transformation(origin={90.0,-60.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y3_node annotation (Placement(
+          transformation(origin={90.0,-60.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,-30.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       parameter Real k3t;
-      BioChem.Interfaces.Nodes.SubstanceConnector y2_node annotation(Placement(transformation(origin={90.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y2_node annotation (Placement(
+          transformation(origin={90.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,30.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       BioChem.Examples.CircadianOscillator.Nucleus.per2_cry_nuclear_export_ per2_cry_nuclear_export(k3t=k3t) "per2_cry_nuclear_export" annotation(Placement(transformation(origin={68.1433,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
       BioChem.Substances.AmbientSubstance ambientSubstance annotation(Placement(transformation(origin={10.0,-50.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       parameter Real k3d;
       BioChem.Examples.CircadianOscillator.Nucleus.nuclear_per2_cry_complex_degradation_ nuclear_per2_cry_complex_degradation(k3d=k3d) "nuclear_per2_cry_complex_degradation" annotation(Placement(transformation(origin={40.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-180)));
-      BioChem.Interfaces.Nodes.SubstanceConnector y6_node annotation(Placement(transformation(origin={90.0,90.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,90.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y6_node annotation (Placement(
+          transformation(origin={90.0,90.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,90.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       parameter Real k6t;
-      BioChem.Interfaces.Nodes.SubstanceConnector y5_node annotation(Placement(transformation(origin={90.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y5_node annotation (Placement(
+          transformation(origin={90.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,-90.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       Nucleus.BMAL1_nuclear_export_ BMAL1_nuclear_export(k6t=k6t) "BMAL1_nuclear_export" annotation(Placement(transformation(origin={-80.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
       parameter Real k6d;
       BioChem.Examples.CircadianOscillator.Nucleus.nuclear_BMAL1_degradation_ nuclear_BMAL1_degradation(k6d=k6d) "nuclear_BMAL1_degradation" annotation(Placement(transformation(origin={10.0,10.0}, extent={{10.0,-10.0},{-10.0,10.0}}, rotation=90)));
@@ -1608,9 +1655,15 @@ The simulation results are shown in the
       parameter Real k2d;
       Cytoplasm.cytoplasmic_per2_cry_complex_degradation_ cytoplasmic_per2_cry_complex_degradation(k2d=k2d) "cytoplasmic_per2_cry_complex_degradation" annotation(Placement(transformation(origin={120.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
       parameter Real k2t;
-      BioChem.Interfaces.Nodes.SubstanceConnector y3_node annotation(Placement(transformation(origin={190.0,30.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y3_node annotation (Placement(
+          transformation(origin={190.0,30.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,30.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       Cytoplasm.per2_cry_nuclear_import_ per2_cry_nuclear_import(k2t=k2t) "per2_cry_nuclear_import" annotation(Placement(transformation(origin={180.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
-      BioChem.Interfaces.Nodes.SubstanceConnector y2_node annotation(Placement(transformation(origin={190.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y2_node annotation (Placement(
+          transformation(origin={190.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,-30.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       input Real trans_Bmal1;
       Cytoplasm.Bmal1_transcription_ Bmal1_transcription(trans_Bmal1=trans_Bmal1) "Bmal1_transcription" annotation(Placement(transformation(origin={74.9249,-23.3818}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
       parameter Real k4d;
@@ -1620,9 +1673,15 @@ The simulation results are shown in the
       parameter Real k5d;
       Cytoplasm.cytoplasmic_BMAL1_degradation_ cytoplasmic_BMAL1_degradation(k5d=k5d) "cytoplasmic_BMAL1_degradation" annotation(Placement(transformation(origin={60.0,30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       parameter Real k5t;
-      BioChem.Interfaces.Nodes.SubstanceConnector y6_node annotation(Placement(transformation(origin={190.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y6_node annotation (Placement(
+          transformation(origin={190.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,-90.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
       Cytoplasm.BMAL1_nuclear_import_ BMAL1_nuclear_import(k5t=k5t) "BMAL1_nuclear_import" annotation(Placement(transformation(origin={50.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-450)));
-      BioChem.Interfaces.Nodes.SubstanceConnector y5_node annotation(Placement(transformation(origin={190.0,80.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,90.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector y5_node annotation (Placement(
+          transformation(origin={190.0,80.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,90.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
     equation
       connect(BMAL1_nuclear_import.p1,y6_node) annotation(Line(origin={128.8,-92.4506}, points={{-78.8,1.2006},{-78.8,-3.0509},{48.2,-3.0509},{48.2,2.4506},{61.2,2.4506}}, smooth=Smooth.Bezier));
       connect(y2.n1,y2_node) annotation(Line(origin={169.0149,-25.9149}, points={{-29.0149,4.0851},{8.5,4.0851},{8.5,-4.0851},{20.9851,-4.0851}}, smooth=Smooth.Bezier));
@@ -2310,10 +2369,16 @@ The simulation results are shown in the
       input Real p1_sbml;
       input Real p2_sbml;
       input Real p3_sbml;
-      BioChem.Interfaces.Nodes.SubstanceConnector Ca_Cyt_node annotation(Placement(transformation(origin={-90.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={-110.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector Ca_Cyt_node annotation (
+        Placement(transformation(origin={-90.0,10.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}}), iconTransformation(origin={-110.0,0.0}, extent={{-10.0,
+              -10.0},{10.0,10.0}})));
       Endoplasmic_Reticulum.Jch_ Jch(p1_sbml=p1_sbml, p2_sbml=p2_sbml, p3_sbml=p3_sbml) annotation(Placement(transformation(origin={-80.0,-20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
       Endoplasmic_Reticulum.Jleak_ Jleak annotation(Placement(transformation(origin={-80.0,43.7135}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
-      BioChem.Interfaces.Nodes.SubstanceConnector CaER_node annotation(Placement(transformation(origin={90.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={110.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector CaER_node annotation (Placement(
+          transformation(origin={90.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
+          iconTransformation(origin={110.0,0.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}})));
     equation
       connect(Jleak.p1,Ca_Cyt_node) annotation(Line(origin={-85.0,22.1159}, points={{5.0,10.3476},{5.0,0.8841},{-5.0,0.8841},{-5.0,-12.1159}}, smooth=Smooth.Bezier));
       connect(Jch.p1,Ca_Cyt_node) annotation(Line(origin={-85.0,-1.1875}, points={{5.0,-7.5625},{5.0,-1.8125},{-5.0,-1.8125},{-5.0,11.1875}}, smooth=Smooth.Bezier));
@@ -2485,7 +2550,9 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.dirac dirac annotation(Placement(transformation(origin={-100,50}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance Q_sto(c(start=0)=q_sto) annotation(Placement(transformation(origin={100,30}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance D(c(start=0)=d) annotation(Placement(transformation(origin={100,5.76656}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector Ra_connector annotation(Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector Ra_connector annotation (
+            Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.BoundarySubstance GlucoseIntake(c(
                                                              start = 78000))
                                                                             annotation(Placement(transformation(origin={-130,50}, extent={{-10,-10},{10,10}})));
@@ -2525,10 +2592,19 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           parameter Real G_b=95;
           parameter Real K=2.3;
           parameter Real gamma=0.5;
-          BioChem.Interfaces.Nodes.ModifierConnector G_connector annotation(Placement(transformation(origin={0,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={0,110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector S_connector annotation(Placement(transformation(origin={-120,-8.88178e-16}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,0}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector I_po_connector annotation(Placement(transformation(origin={-90,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-70,110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation(Placement(transformation(origin={100,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={75.1683,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector G_connector annotation (
+            Placement(transformation(origin={0,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={0,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector S_connector annotation (
+            Placement(transformation(origin={-120,-8.88178e-16}, extent={{-10,-10},
+                  {10,10}}), iconTransformation(origin={-110,0}, extent={{-10,-10},
+                  {10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector I_po_connector annotation (
+            Placement(transformation(origin={-90,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={-70,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation (
+            Placement(transformation(origin={100,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={75.1683,110}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance S_calc(c=s_signal) annotation(Placement(transformation(origin={-90,0}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.signaltosubstance signaltosubstance1 annotation(Placement(transformation(origin={2.22045e-16,60}, extent={{-10,-10},{10,10}}, rotation=-90)));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.signaltosubstance signaltosubstance2 annotation(Placement(transformation(origin={100,60}, extent={{-10,-10},{10,10}}, rotation=-90)));
@@ -2562,9 +2638,17 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           parameter BioChem.Units.Volume V_I=0.05;
           BioChem.Substances.Substance I_p(c(start=1.25)=i_p) annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction m_4(k=0.194) annotation(Placement(transformation(origin={-60,0}, extent={{10,-10},{-10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector I_p_connector annotation(Placement(transformation(origin={120,0}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,4.44089e-16}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ProductConnector I_connector annotation(Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector I_signal_connector annotation(Placement(transformation(origin={120,-30}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,-56.82}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector I_p_connector annotation (
+            Placement(transformation(origin={120,0}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={110,4.44089e-16}, extent={{-10,-10},{
+                  10,10}})));
+        BioChem.Interfaces.Nodes.ProductConnector I_connector annotation (
+            Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector I_signal_connector
+          annotation (Placement(transformation(origin={120,-30}, extent={{-10,-10},
+                  {10,10}}), iconTransformation(origin={110,-56.82}, extent={{-10,
+                  -10},{10,10}})));
           BioChem.Substances.SignalSubstance I_p_signal(c=i_p_signal) annotation(Placement(transformation(origin={60,7.77156e-16}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance I_signal(c=i_signal) annotation(Placement(transformation(origin={60,-30}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.BoundarySubstance Deg annotation(Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,10}})));
@@ -2586,14 +2670,31 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           BioChem.Units.Concentration g_p_signal;
           BioChem.Units.Concentration g_p;
           BioChem.Units.Concentration g_signal;
-          BioChem.Interfaces.Nodes.ProductConnector EGP_connector annotation(Placement(transformation(origin={4.44089e-16,-80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-1.73862,-110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation(Placement(transformation(origin={-110,-70}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,-70}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector E_connector annotation(Placement(transformation(origin={120,-30}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,-48.4304}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ProductConnector Ra_connector annotation(Placement(transformation(origin={-80,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-77.9724,110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector G_connector annotation(Placement(transformation(origin={0,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={0,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ProductConnector EGP_connector annotation (
+            Placement(transformation(origin={4.44089e-16,-80}, extent={{-10,-10},
+                  {10,10}}), iconTransformation(origin={-1.73862,-110}, extent=
+                  {{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation (
+            Placement(transformation(origin={-110,-70}, extent={{-10,-10},{10,
+                  10}}), iconTransformation(origin={-110,-70}, extent={{-10,-10},
+                  {10,10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector E_connector annotation (
+            Placement(transformation(origin={120,-30}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={110,-48.4304}, extent={{-10,-10},{10,
+                  10}})));
+        BioChem.Interfaces.Nodes.ProductConnector Ra_connector annotation (
+            Placement(transformation(origin={-80,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={-77.9724,110}, extent={{-10,-10},{10,
+                  10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector G_connector annotation (
+            Placement(transformation(origin={0,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={0,110}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance G_p_signal(c=g_p_signal) annotation(Placement(transformation(origin={-110,-23.3921}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance G_signal(c=g_signal) annotation(Placement(transformation(origin={-120,40}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector G_signal_connector annotation(Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,1.94}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector G_signal_connector
+          annotation (Placement(transformation(origin={-120,0}, extent={{-10,-10},
+                  {10,10}}), iconTransformation(origin={-110,1.94}, extent={{-10,
+                  -10},{10,10}})));
           BioChem.Substances.Substance G_p(c(
                                            start = 178),c=g_p) annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction Ra_reaction(k=1) annotation(Placement(transformation(origin={-80,50}, extent={{-10,-10},{10,10}}, rotation=-90)));
@@ -2626,8 +2727,14 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
                                                       annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance S_signal(c=s_signal) annotation(Placement(transformation(origin={-70,50}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.m_3 m_3 annotation(Placement(transformation(origin={-70,0}, extent={{10,-10},{-10,10}})));
-          BioChem.Interfaces.Nodes.ProductConnector S_connector(c=s) annotation(Placement(transformation(origin={120,0}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,-1.93864}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector I_connector annotation(Placement(transformation(origin={7.10543e-15,79.59}, extent={{-10,-10},{10,10}}), iconTransformation(origin={0,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ProductConnector S_connector(c=s) annotation (
+            Placement(transformation(origin={120,0}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={110,-1.93864}, extent={{-10,-10},{10,
+                  10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector I_connector annotation (
+            Placement(transformation(origin={7.10543e-15,79.59}, extent={{-10,-10},
+                  {10,10}}), iconTransformation(origin={0,110}, extent={{-10,-10},
+                  {10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction S_reaction(k=1) annotation(Placement(transformation(origin={70,-7.21645e-16}, extent={{10,-10},{-10,10}})));
           BioChem.Substances.BoundarySubstance Deg annotation(Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,10}})));
         equation
@@ -2652,10 +2759,19 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           BioChem.Units.Concentration i_d;
           BioChem.Units.Concentration g_p;
           BioChem.Units.Concentration i_po;
-          BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation(Placement(transformation(origin={0,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={2.22045e-16,110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector EGP_connector annotation(Placement(transformation(origin={60,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={73.83,110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation(Placement(transformation(origin={-60,80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-72.29,110}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector I_po_connector annotation(Placement(transformation(origin={120,-60}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,0}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation (
+            Placement(transformation(origin={0,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={2.22045e-16,110}, extent={{-10,-10},{
+                  10,10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector EGP_connector annotation (
+            Placement(transformation(origin={60,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={73.83,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation (
+            Placement(transformation(origin={-60,80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={-72.29,110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector I_po_connector annotation (
+            Placement(transformation(origin={120,-60}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={110,0}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction k_i1(k=0.0079) annotation(Placement(transformation(origin={-90,63.2158}, extent={{10,-10},{-10,10}}, rotation=-270)));
           BioChem.Substances.Substance I_1(c(
                                            start = 25))
@@ -2689,9 +2805,15 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         model GlucoseRenalExcretion
           extends BioChem.Compartments.Compartment(V(
                                                    start = 1.0));
-          BioChem.Interfaces.Nodes.ProductConnector productConnector1 annotation(Placement(transformation(origin={-120,-4.44089e-16}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,3.33067e-16}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ProductConnector productConnector1 annotation
+          (Placement(transformation(origin={-120,-4.44089e-16}, extent={{-10,-10},
+                  {10,10}}), iconTransformation(origin={-110,3.33067e-16},
+                extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.RenalReaction renalReaction1 annotation(Placement(transformation(origin={-90,3.88578e-16}, extent={{-10,10},{10,-10}})));
-          BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation(Placement(transformation(origin={-120,-70}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,-83.5976}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector G_p_connector annotation (
+            Placement(transformation(origin={-120,-70}, extent={{-10,-10},{10,
+                  10}}), iconTransformation(origin={-110,-83.5976}, extent={{-10,
+                  -10},{10,10}})));
           BioChem.Substances.BoundarySubstance E annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
         equation
           connect(renalReaction1.p1,E.n1) annotation(Line(origin={-39.375,1.83187e-16}, points={{-39.375,1.83187e-16},{39.375,-1.83187e-16}}));
@@ -2704,8 +2826,13 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         model UtilizationMuscleTissue
           extends BioChem.Compartments.Compartment(V(
                                                    start = 1.0));
-          BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation(Placement(transformation(origin={-120,50}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,83.5696}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.ProductConnector G_t_connector annotation(Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,1.62}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation (
+            Placement(transformation(origin={-120,50}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={-110,83.5696}, extent={{-10,-10},{10,
+                  10}})));
+        BioChem.Interfaces.Nodes.ProductConnector G_t_connector annotation (
+            Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={-110,1.62}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.BoundarySubstance U_idm annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction UtilizationReaction(K_m0=225.59, V_m0=2.5, V_mX=0.047, p_2U=0.0331, part=0.8) annotation(Placement(transformation(origin={-64.11,0}, extent={{-10,-10},{10,10}})));
         equation
@@ -2718,12 +2845,19 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         model TissueGlucose
           extends BioChem.Compartments.Compartment(V(
                                                    start = 1.0));
-          BioChem.Interfaces.Nodes.ProductConnector G_connector annotation(Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.ProductConnector G_connector annotation (
+            Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.Substance G_t(c(
                                            start = 130))
                                                         annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector U_idf_connector annotation(Placement(transformation(origin={120,40}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,60}, extent={{-10,-10},{10,10}})));
-          BioChem.Interfaces.Nodes.SubstrateConnector U_idm_connector annotation(Placement(transformation(origin={120,-40}, extent={{-10,-10},{10,10}}), iconTransformation(origin={110,-63.4979}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector U_idf_connector annotation
+          (Placement(transformation(origin={120,40}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={110,60}, extent={{-10,-10},{10,10}})));
+        BioChem.Interfaces.Nodes.SubstrateConnector U_idm_connector annotation
+          (Placement(transformation(origin={120,-40}, extent={{-10,-10},{10,10}}),
+              iconTransformation(origin={110,-63.4979}, extent={{-10,-10},{10,
+                  10}})));
         equation
           connect(G_t.n1,U_idm_connector) annotation(Line(origin={83.5,-20}, points={{-83.5,20},{23.5,20},{23.5,-20},{36.5,-20}}));
           connect(G_t.n1,U_idf_connector) annotation(Line(origin={83.5,20}, points={{-83.5,-20},{23.5,-20},{23.5,20},{36.5,20}}));
@@ -2759,8 +2893,14 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
             BioChem.Substances.SignalSubstance PKB_tot annotation(Placement(transformation(origin={110,0}, extent={{-10,-10},{10,10}})));
             BioChem.Substances.SignalSubstance GLUT4_tot annotation(Placement(transformation(origin={110,-30}, extent={{-10,-10},{10,10}})));
             BioChem.Substances.BoundarySubstance GlucoseUtilization annotation(Placement(transformation(origin={110,-80}, extent={{-10,-10},{10,10}})));
-            BioChem.Interfaces.Nodes.ModifierConnector modifierConnector1 annotation(Placement(transformation(origin={-80,90}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,0}, extent={{-10,-10},{10,10}})));
-            BioChem.Interfaces.Nodes.ProductConnector productConnector1 annotation(Placement(transformation(origin={-7.77156e-16,-80}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-1.22125e-15,-110}, extent={{-10,-10},{10,10}})));
+          BioChem.Interfaces.Nodes.ModifierConnector modifierConnector1
+            annotation (Placement(transformation(origin={-80,90}, extent={{-10,
+                    -10},{10,10}}), iconTransformation(origin={-110,0}, extent=
+                    {{-10,-10},{10,10}})));
+          BioChem.Interfaces.Nodes.ProductConnector productConnector1
+            annotation (Placement(transformation(origin={-7.77156e-16,-80},
+                  extent={{-10,-10},{10,10}}), iconTransformation(origin={-1.22125e-15,
+                    -110}, extent={{-10,-10},{10,10}})));
             BioChem.Substances.Substance GLUT4_MEMBRANE(c(
                                                         start = 0))
                                                                    annotation(Placement(transformation(origin={40,-30}, extent={{-10,-10},{10,10}})));
@@ -2798,8 +2938,14 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           model AdiposeTissue
             extends BioChem.Compartments.Compartment(V(
                                                      start = 1.0));
-            BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation(Placement(transformation(origin={-120,50}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,83.8877}, extent={{-10,-10},{10,10}})));
-            BioChem.Interfaces.Nodes.ProductConnector G_t_connector annotation(Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,10}}), iconTransformation(origin={-110,1.61}, extent={{-10,-10},{10,10}})));
+          BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation (
+              Placement(transformation(origin={-120,50}, extent={{-10,-10},{10,
+                    10}}), iconTransformation(origin={-110,83.8877}, extent={{-10,
+                    -10},{10,10}})));
+          BioChem.Interfaces.Nodes.ProductConnector G_t_connector annotation (
+              Placement(transformation(origin={-120,0}, extent={{-10,-10},{10,
+                    10}}), iconTransformation(origin={-110,1.61}, extent={{-10,
+                    -10},{10,10}})));
             BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.AdiposeTissue.Adipocyte adipocyte1 annotation(Placement(transformation(origin={0,6.66134e-16}, extent={{-10,-10},{10,10}})));
           equation
             connect(adipocyte1.productConnector1,G_t_connector) annotation(Line(origin={-66.8,-8.2005}, points={{66.8,-2.7995},{66.8,-6.80075},{-40.2,-6.80075},{-40.2,8.2005},{-53.2,8.2005}}));

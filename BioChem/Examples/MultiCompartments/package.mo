@@ -139,7 +139,14 @@ package MultiCompartments "Examples using different compartments for the reactin
       BioChem.Substances.BoundarySubstance aconitase annotation(Placement(transformation(origin={70.0,60.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
       BioChem.Substances.BoundarySubstance citrateSynthase annotation(Placement(transformation(origin={-0.0,90.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
       BioChem.Substances.BoundarySubstance isocitrateDehydrogenase annotation(Placement(transformation(origin={90.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Interfaces.Nodes.SubstanceConnector sPyruvate annotation(Placement(transformation(origin={-30.0,94.5861}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180), iconTransformation(origin={-0.0,115.0}, extent={{-15.0,-15.0},{15.0,15.0}}, rotation=180)));
+    BioChem.Interfaces.Nodes.SubstanceConnector sPyruvate annotation (Placement(
+          transformation(
+          origin={-30.0,94.5861},
+          extent={{-10.0,-10.0},{10.0,10.0}},
+          rotation=180), iconTransformation(
+          origin={-0.0,115.0},
+          extent={{-15.0,-15.0},{15.0,15.0}},
+          rotation=180)));
     equation
       connect(acetylCoA.n1,sPyruvate) annotation(Line(origin={-30.0,89.7241}, points={{0.0,-9.7241},{0.0,4.862},{0.0,4.862}}));
       connect(isocitrateDehydrogenase.n1,uuifa1.aF1) annotation(Line(origin={86.3333,-5.0}, points={{3.6667,0.0},{3.6667,0.0},{-7.3333,0.0}}));
@@ -181,7 +188,10 @@ package MultiCompartments "Examples using different compartments for the reactin
       BioChem.Substances.Substance substance(c(
                                              start = 1))
                                                         annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
-      BioChem.Interfaces.Nodes.SubstanceConnector substanceConnector annotation(Placement(transformation(origin={60.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={0.0,110.0}, extent={{-15.0,-15.0},{15.0,15.0}})));
+    BioChem.Interfaces.Nodes.SubstanceConnector substanceConnector annotation (
+        Placement(transformation(origin={60.0,0.0}, extent={{-10.0,-10.0},{10.0,
+              10.0}}), iconTransformation(origin={0.0,110.0}, extent={{-15.0,-15.0},
+              {15.0,15.0}})));
     equation
       connect(substance.n1,substanceConnector) annotation(Line(points={{0.0,0.0},{60.0,0.0}}));
       annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={12.9676,-18.3909}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-92.9676,-61.6091},{67.0324,98.3909}}, textString="SC", fontName="Arial")}));
