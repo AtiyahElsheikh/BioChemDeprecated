@@ -18,7 +18,7 @@ package Units "Units used in BioChem"
 
   type MolarFlowRate = Modelica.Icons.TypeReal(quantity="Molar flow rate", unit="mol/s");
 
-  type IonicCharge =Integer(quantity="Ionic charge", unit="1") annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
+  type IonicCharge = Modelica.Icons.TypeInteger(quantity="Ionic charge", unit="1");
 
   type DilutionRate = Modelica.Icons.TypeReal(quantity="Dilution rate", unit="/s");
 
