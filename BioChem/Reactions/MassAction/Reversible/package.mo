@@ -179,7 +179,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s1.V - k2*p1.c^nP1*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Uur;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with one reactant and one product.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -362,7 +361,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s1.V - k2*p1.c^nP1*p2.c^nP2*p3.c^nP3*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Utr;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with one reactant and three products.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -545,7 +543,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s1.V - k2*p1.c^nP1*p2.c^nP2*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Ubr;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with one reactant and two products.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -728,7 +725,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s2.c^nS2*s3.c^nS3*s1.V - k2*p1.c^nP1*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Tur;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with three reactants and one product.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -911,7 +907,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s2.c^nS2*s3.c^nS3*s1.V - k2*p1.c^nP1*p2.c^nP2*p3.c^nP3*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Ttr;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with three reactants and three products.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -1094,7 +1089,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s2.c^nS2*s3.c^nS3*s1.V - k2*p1.c^nP1*p2.c^nP2*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Tbr;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with three reactants and two products</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -1277,7 +1271,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s2.c^nS2*s1.V - k2*p1.c^nP1*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Bur;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with two reactants and one product.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -1460,7 +1453,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s2.c^nS2*s1.V - k2*p1.c^nP1*p2.c^nP2*p3.c^nP3*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Btr;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with two reactants and three products.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
@@ -1643,7 +1635,6 @@ package Reversible "Reversible reactions"
       rr=k1*s1.c^nS1*s2.c^nS2*s1.V - k2*p1.c^nP1*p2.c^nP2*p1.V;
       annotation(Documentation,   Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     end Bbr;
-
     annotation(Documentation(info="<html>
  <p>This package contains models for stoichiometric reactions with two reactants and two products.</p>
  </html>"), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));

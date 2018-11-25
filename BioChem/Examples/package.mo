@@ -391,7 +391,6 @@ The simulation results are shown in the
 
 </html>", revisions=""), experiment(StartTime=0.0, StopTime=100, NumberOfIntervals=-1, Algorithm="dassl", Tolerance=1e-06));
     end cell;
-
     annotation(Documentation(info="<html>
 <h1>A Simple Mitotic Oscillator</h1>
 
@@ -1077,7 +1076,6 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
       connect(vn.s1,node_NADH) annotation(Line(origin={-70.625,-10.0}, points={{9.375,0.0},{-9.375,0.0}}));
       annotation(Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})));
     end mitochondria;
-
   end centralMetabolism;
 
   package CircadianOscillator "Weimann2004_CircadianOscillator"
@@ -1652,7 +1650,6 @@ The simulation results are shown in the
       connect(y4.n1,Bmal1_mRNA_degradation.s1) annotation(Line(origin={88.2764,-53.75}, points={{-23.4471,-6.25},{11.7236,-6.25},{11.7236,12.5}}, smooth=Smooth.Bezier));
       annotation(Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{0.0,-100.0},{200.0,100.0}}, preserveAspectRatio=true, grid={10,10})));
     end Cytoplasm;
-
     annotation(Documentation(info="<html>
 <h1>Circadian Oscillator</h1>
 
@@ -2088,7 +2085,6 @@ The simulation results are shown in the
 <img src=\"modelica://BioChem/Resources/Images/Cell2.png\" alt=\"Fig1: Simulation results\">
 </html>", revisions=""));
     end cell;
-
     annotation(Documentation(info="<html>
 <h1>CellDivision</h1>
 This example is a Modelica version of the model presented in <i>Modeling the cell division cycle: cdc2 and cyclin interactions</i> by John J. Tyson. (Proc. Nati. Acad. Sci. USA
@@ -2334,7 +2330,6 @@ The simulation results are shown in the
     </rdf:Description>
   </rdf:RDF>"));
     end Endoplasmic_Reticulum;
-
     annotation(Documentation(info="<html>
 <h1>Ca Oscillations</h1>
 This example is a Modelica version of the model presented in <i>A Minimal Generic Model of Bacteria-Induced Intracellular Ca<sup>2+</sup>
@@ -2962,7 +2957,6 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
 
       annotation(Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})));
     end Utilities;
-
     annotation(Diagram(coordinateSystem(extent={{-148.5,-105},{148.5,105}}, preserveAspectRatio=true, grid={10,10})), Documentation(info="<html>
 <h1>A Whole Body Model of the Glucose Insulin System</h1>
 

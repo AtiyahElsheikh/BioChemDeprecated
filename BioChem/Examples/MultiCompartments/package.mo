@@ -186,7 +186,6 @@ package MultiCompartments "Examples using different compartments for the reactin
       connect(substance.n1,substanceConnector) annotation(Line(points={{0.0,0.0},{60.0,0.0}}));
       annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={12.9676,-18.3909}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-92.9676,-61.6091},{67.0324,98.3909}}, textString="SC", fontName="Arial")}));
     end SmallCompartment;
-
     annotation(Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})), Documentation(info="<html>
 <h1> Utilities </h1>
 This package contains models that are used in the Multicompartment examples. The
