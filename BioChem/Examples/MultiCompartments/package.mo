@@ -1,37 +1,52 @@
 within BioChem.Examples;
 package MultiCompartments "Examples using different compartments for the reacting species"
   extends Icons.Library;
+
   model GlucoseMetabolism "Glycolysis and the TCA"
-    annotation(Documentation(info="<html>
- <p>
- A simple glucose metabolism model which combines the glycolysis and<br>
- the TCA, which is located in another compartment.<br>
- The parameter values in this model are arbitrarily chosen,
- to obtain a fully functional model, realistic parameter values must be used.
- </p>
- </html>"), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Line(points={{0.0,100.0},{0.0,25.0},{-25.0,0.0},{0.0,-25.0},{0.0,-100.0}}, color={170,0,0}, thickness=0.5),Line(points={{0.0,25.0},{25.0,0.0},{-25.0,0.0}}, color={170,0,0}, thickness=0.5)}), Diagram(coordinateSystem(extent={{-105,148.5},{105,-148.5}}, preserveAspectRatio=true, grid={10,10})));
     extends BioChem.Compartments.Compartment;
-    Substances.Substance Glucose(c.start=1/1000) "Glucose" annotation(Placement(transformation(origin={-0.0,140.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+    Substances.Substance Glucose(c(
+                                 start = 1/1000))
+                                                 "Glucose" annotation(Placement(transformation(origin={-0.0,140.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui5(k1=1) annotation(Placement(transformation(origin={0.0,120.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance G6P(c.start=0) "Glucose-6-phosphate" annotation(Placement(transformation(origin={0.0,100.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+    Substances.Substance G6P(c(
+                             start = 0))
+                                        "Glucose-6-phosphate" annotation(Placement(transformation(origin={0.0,100.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
     Reactions.MassAction.Reversible.UniUni.Uur uur(k1=1) annotation(Placement(transformation(origin={-0.0,80.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance F6P(c.start=0) "Fructose-6-phosphate" annotation(Placement(transformation(origin={-0.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+    Substances.Substance F6P(c(
+                             start = 0))
+                                        "Fructose-6-phosphate" annotation(Placement(transformation(origin={-0.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui annotation(Placement(transformation(origin={0.0,40.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance F16BP(c.start=0) "Fructose-1,6-bisphosphate" annotation(Placement(transformation(origin={-0.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+    Substances.Substance F16BP(c(
+                               start = 0))
+                                          "Fructose-1,6-bisphosphate" annotation(Placement(transformation(origin={-0.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
     Reactions.MassAction.Irreversible.UniBi.Ubi ubi annotation(Placement(transformation(origin={-0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
     Reactions.MassAction.Reversible.UniUni.Uur uur1 annotation(Placement(transformation(origin={0.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance G3P(c.start=0) "Glyceraldehyde-3-phosphate" annotation(Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance DHAP1(c.start=0) "Dihydroxyacetone phosphate" annotation(Placement(transformation(origin={30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance GA3P(c.start=0) "Glycerate-3-phosphate" annotation(Placement(transformation(origin={-0.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance Pyruvate(c.start=0) annotation(Placement(transformation(origin={-0.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance G3P(c(
+                             start = 0))
+                                        "Glyceraldehyde-3-phosphate" annotation(Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance DHAP1(c(
+                               start = 0))
+                                          "Dihydroxyacetone phosphate" annotation(Placement(transformation(origin={30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance GA3P(c(
+                              start = 0))
+                                         "Glycerate-3-phosphate" annotation(Placement(transformation(origin={-0.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance Pyruvate(c(
+                                  start = 0))
+                                             annotation(Placement(transformation(origin={-0.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     BioChem.Examples.MultiCompartments.Utilities.TCA TCA1 annotation(Placement(transformation(origin={70.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
     Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa annotation(Placement(transformation(origin={30.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance G2P1(c.start=0) "Glycerate-2-phosphate" annotation(Placement(transformation(origin={-60.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance PEP1(c.start=0) "Phosphoenol pyruvate" annotation(Placement(transformation(origin={-60.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance G2P1(c(
+                              start = 0))
+                                         "Glycerate-2-phosphate" annotation(Placement(transformation(origin={-60.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance PEP1(c(
+                              start = 0))
+                                         "Phosphoenol pyruvate" annotation(Placement(transformation(origin={-60.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     Reactions.MassAction.Reversible.UniUni.Uur uur2 annotation(Placement(transformation(origin={-30.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui4 annotation(Placement(transformation(origin={-30.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui3 annotation(Placement(transformation(origin={-80.0,-105.6444}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance G13BP(c.start=0) "Glycerate-1,3-bisphosphate" annotation(Placement(transformation(origin={60.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance G13BP(c(
+                               start = 0))
+                                          "Glycerate-1,3-bisphosphate" annotation(Placement(transformation(origin={60.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui2 annotation(Placement(transformation(origin={30.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui1 annotation(Placement(transformation(origin={16.5092,-56.5092}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-28.8073)));
     Substances.BoundarySubstance pyruvateDehydrogenase annotation(Placement(transformation(origin={30.0,-110.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
@@ -60,63 +75,46 @@ package MultiCompartments "Examples using different compartments for the reactin
     connect(uur.s1,G6P.n1) annotation(Line(origin={-1.7639,-2.4694}, points={{1.7639,93.7194},{1.7639,102.4694}}));
     connect(uui5.p1,G6P.n1) annotation(Line(origin={-1.7639,-2.4694}, points={{1.7639,111.2194},{1.7639,102.4694}}));
     connect(Glucose.n1,uui5.s1) annotation(Line(origin={-1.7639,-2.4694}, points={{1.7639,142.4694},{1.7639,133.7194}}));
+    annotation(Documentation(info="<html>
+ <p>
+ A simple glucose metabolism model which combines the glycolysis and<br>
+ the TCA, which is located in another compartment.<br>
+ The parameter values in this model are arbitrarily chosen,
+ to obtain a fully functional model, realistic parameter values must be used.
+ </p>
+ </html>"), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Line(points={{0.0,100.0},{0.0,25.0},{-25.0,0.0},{0.0,-25.0},{0.0,-100.0}}, color={170,0,0}, thickness=0.5),Line(points={{0.0,25.0},{25.0,0.0},{-25.0,0.0}}, color={170,0,0}, thickness=0.5)}), Diagram(coordinateSystem(extent={{-105,148.5},{105,-148.5}}, preserveAspectRatio=true, grid={10,10})));
   end GlucoseMetabolism;
 
   model BigCompartmentReversible
     extends BioChem.Compartments.Compartment;
-    annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={0.0,4.4965}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-80.0,-84.4965},{80.0,75.5035}}, textString="BCR", fontName="Arial")}));
     BioChem.Reactions.MichaelisMenten.Uur uur annotation(Placement(transformation(origin={0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance substance(c.start=2) annotation(Placement(transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    Substances.Substance substance(c(
+                                   start = 2))
+                                              annotation(Placement(transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     BioChem.Examples.MultiCompartments.Utilities.SmallCompartment smallCompartment annotation(Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
   equation
     connect(smallCompartment.substanceConnector,uur.s1) annotation(Line(origin={-23.75,-6.33}, points={{-6.25,-12.6733},{-6.25,6.33},{12.5,6.3267}}, smooth=Smooth.Bezier));
     connect(uur.p1,substance.n1) annotation(Line(origin={25.625,0.0}, points={{-14.375,0.0},{14.375,-0.0}}));
+    annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={0.0,4.4965}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-80.0,-84.4965},{80.0,75.5035}}, textString="BCR", fontName="Arial")}));
   end BigCompartmentReversible;
 
   model BigCompartmentIrreversible
     extends BioChem.Compartments.Compartment(V(start=3));
-    annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={2.8035,5.0159}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-82.8035,-85.0159},{77.1965,74.9841}}, textString="BCI", fontName="Arial")}));
     Reactions.MassAction.Irreversible.UniUni.Uui uui annotation(Placement(transformation(origin={0.0,-0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-360)));
     BioChem.Examples.MultiCompartments.Utilities.SmallCompartment smallCompartment annotation(Placement(transformation(origin={-40.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-360)));
     Substances.Substance substance annotation(Placement(transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
   equation
     connect(smallCompartment.substanceConnector,uui.s1) annotation(Line(origin={-30.4167,-9.6667}, points={{-9.5833,-19.3333},{-9.5833,9.6667},{19.1667,9.6667}}, smooth=Smooth.Bezier));
     connect(uui.p1,substance.n1) annotation(Line(origin={25.625,0.0}, points={{-14.375,0.0},{14.375,-0.0}}));
+    annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={2.8035,5.0159}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-82.8035,-85.0159},{77.1965,74.9841}}, textString="BCI", fontName="Arial")}));
   end BigCompartmentIrreversible;
 
-  annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   package Utilities
-    annotation(Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})), Documentation(info="<html>
-<h1> Utilities </h1>
-This package contains models that are used in the Multicompartment examples. The
-
-<a href=\"Modelica://BioChem.Examples.MultiCompartments.Utilities.SmallCompartment\">SmallCompartment</a>
-
-is used in the
-
-<a href=\"Modelica://BioChem.Examples.MultiCompartments.BigCompartmentIrreversible\">BigCompartmentIrreversible</a>
-
-and the
-
-<a href=\"Modelica://BioChem.Examples.MultiCompartments.BigCompartmentReversible\">BigCompartmentReversible</a>
-.
-
-The
-<a href=\"Modelica://BioChem.Examples.MultiCompartments.Utilities.TCA\">TCA</a>
-
-is used in the
-<a href=\"Modelica://BioChem.Examples.MultiCompartments.GlucoseMetabolism\">GlucoseMetabolism</a>
-.<html>", revisions=""));
     model TCA "Tricarboxylic acid cycle"
-      annotation(Documentation(info="<html>
- <p>
- A simple TCA model.<br>
- The parameter values in this model are arbitrarily chosen,
- to obtain a fully functional model, realistic parameter values must be used.
- </p>
- </html>"), Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Ellipse(origin={0.0,-0.0}, lineColor={0,0,255}, fillColor={255,255,255}, extent={{-100.0,-100.0},{100.0,100.0}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-81.68,57.55},{-56.68,82.55}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-84.01,-79.94},{-59.01,-54.94}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-12.5,-112.5},{12.5,-87.5}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-112.5,-12.5},{-87.5,12.5}}),Ellipse(lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, extent={{58.28,-81.54},{83.28,-56.54}}),Ellipse(lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, extent={{57.82,56.16},{82.82,81.16}}),Ellipse(lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, extent={{87.5,-12.5},{112.5,12.5}})}));
       extends BioChem.Compartments.Compartment;
-      BioChem.Substances.Substance oxaloacetate(c.start=1/10000) annotation(Placement(transformation(origin={-30.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+      BioChem.Substances.Substance oxaloacetate(c(
+                                                start = 1/10000))
+                                                                 annotation(Placement(transformation(origin={-30.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa5 annotation(Placement(transformation(origin={-70.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=90)));
       BioChem.Substances.BoundarySubstance succinateThiokinase annotation(Placement(transformation(origin={-0.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       BioChem.Substances.Substance alphaKetoglutarate annotation(Placement(transformation(origin={70.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
@@ -169,17 +167,48 @@ is used in the
       connect(succinate.n1,uuifa3.p1) annotation(Line(origin={-20.625,-70.0}, points={{-9.375,0.0},{9.375,0.0}}));
       connect(succinateThiokinase.n1,uuifa3.aF1) annotation(Line(origin={-0.0,-82.6667}, points={{-0.0,-7.3333},{-0.0,3.6667},{0.0,3.6667}}));
       connect(buifa.s2,oxaloacetate.n1) annotation(Line(origin={-0.0,10.0}, points={{-11.25,50.0702},{-30.0,50.0}}));
+      annotation(Documentation(info="<html>
+ <p>
+ A simple TCA model.<br>
+ The parameter values in this model are arbitrarily chosen,
+ to obtain a fully functional model, realistic parameter values must be used.
+ </p>
+ </html>"), Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Ellipse(origin={0.0,-0.0}, lineColor={0,0,255}, fillColor={255,255,255}, extent={{-100.0,-100.0},{100.0,100.0}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-81.68,57.55},{-56.68,82.55}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-84.01,-79.94},{-59.01,-54.94}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-12.5,-112.5},{12.5,-87.5}}),Ellipse(lineColor={0,85,255}, fillColor={0,85,255}, fillPattern=FillPattern.Solid, extent={{-112.5,-12.5},{-87.5,12.5}}),Ellipse(lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, extent={{58.28,-81.54},{83.28,-56.54}}),Ellipse(lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, extent={{57.82,56.16},{82.82,81.16}}),Ellipse(lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, extent={{87.5,-12.5},{112.5,12.5}})}));
     end TCA;
 
     model SmallCompartment "Michaelis-Menten reaction between two compartments"
       extends BioChem.Compartments.Compartment;
-      annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={12.9676,-18.3909}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-92.9676,-61.6091},{67.0324,98.3909}}, textString="SC", fontName="Arial")}));
-      BioChem.Substances.Substance substance(c.start=1) annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
+      BioChem.Substances.Substance substance(c(
+                                             start = 1))
+                                                        annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
       BioChem.Interfaces.Nodes.SubstanceConnector substanceConnector annotation(Placement(transformation(origin={60.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}), iconTransformation(origin={0.0,110.0}, extent={{-15.0,-15.0},{15.0,15.0}})));
     equation
       connect(substance.n1,substanceConnector) annotation(Line(points={{0.0,0.0},{60.0,0.0}}));
+      annotation(Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10}), graphics={Text(origin={12.9676,-18.3909}, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-92.9676,-61.6091},{67.0324,98.3909}}, textString="SC", fontName="Arial")}));
     end SmallCompartment;
 
+    annotation(Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, grid={10,10})), Documentation(info="<html>
+<h1> Utilities </h1>
+This package contains models that are used in the Multicompartment examples. The
+
+<a href=\"Modelica://BioChem.Examples.MultiCompartments.Utilities.SmallCompartment\">SmallCompartment</a>
+
+is used in the
+
+<a href=\"Modelica://BioChem.Examples.MultiCompartments.BigCompartmentIrreversible\">BigCompartmentIrreversible</a>
+
+and the
+
+<a href=\"Modelica://BioChem.Examples.MultiCompartments.BigCompartmentReversible\">BigCompartmentReversible</a>
+.
+
+The
+<a href=\"Modelica://BioChem.Examples.MultiCompartments.Utilities.TCA\">TCA</a>
+
+is used in the
+<a href=\"Modelica://BioChem.Examples.MultiCompartments.GlucoseMetabolism\">GlucoseMetabolism</a>
+.<html>", revisions=""));
   end Utilities;
 
+  annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
 end MultiCompartments;

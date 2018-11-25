@@ -1,105 +1,217 @@
 within BioChem.Examples;
 package MassAction "Examples of mass-action kinetics reactions"
   extends Icons.Library;
+
   model UniUni "Example of uni-uni reactions"
-    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10}), graphics={Ellipse(fillColor={170,0,0}, fillPattern=FillPattern.Solid, extent={{-100,-25},{-50,25}}),Ellipse(fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{50,-25},{100,25}}),Line(points={{-50,0},{50,0}}, arrow={Arrow.Open,Arrow.Open}, arrowSize=30),Line(points={{0,50},{0,0}}),Ellipse(fillColor={255,255,0}, fillPattern=FillPattern.Solid, extent={{-25,50},{25,100}})}));
     extends BioChem.Compartments.Compartment;
-    Substances.BoundarySubstance sF21(c.start=1) annotation(Placement(transformation(origin={30,-58}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF21(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={30,-58}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfafi uurfafi annotation(Placement(transformation(origin={40,26}, extent={{-10,-10},{10,10}})));
     Substances.Substance s28 annotation(Placement(transformation(origin={16,-74}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa annotation(Placement(transformation(origin={-90,56}, extent={{-10,-10},{10,10}})));
     Substances.Substance s38 annotation(Placement(transformation(origin={78,-88}, extent={{-10,-10},{10,10}})));
     Substances.Substance s6 annotation(Placement(transformation(origin={-110,-24}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF6(c.start=1) annotation(Placement(transformation(origin={-14,66}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF24(c.start=1) annotation(Placement(transformation(origin={50,-94}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF6(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-14,66}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF24(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={50,-94}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfafibi uurfafibi annotation(Placement(transformation(origin={98,82}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uur uur annotation(Placement(transformation(origin={-90,-44}, extent={{-10,-10},{10,10}})));
     Substances.Substance s20 annotation(Placement(transformation(origin={-44,-74}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF3(c.start=1) annotation(Placement(transformation(origin={-90,-4}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF30(c.start=1) annotation(Placement(transformation(origin={104,-10}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF27(c.start=1) annotation(Placement(transformation(origin={94,68}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF3(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-90,-4}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF30(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={104,-10}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF27(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={94,68}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfibabi uurfibabi annotation(Placement(transformation(origin={98,-38}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurbi uurbi annotation(Placement(transformation(origin={-24,56}, extent={{-10,-10},{10,10}})));
     Substances.Substance s12 annotation(Placement(transformation(origin={-44,86}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF8(c.start=1) annotation(Placement(transformation(origin={-20,30}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF16(c.start=1) annotation(Placement(transformation(origin={30,40}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF33(c.start=1) annotation(Placement(transformation(origin={108,-54}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF19(c.start=1) annotation(Placement(transformation(origin={50,6}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF8(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-20,30}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF16(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={30,40}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF33(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={108,-54}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF19(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={50,6}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfababi uurfababi annotation(Placement(transformation(origin={-24,-74}, extent={{-10,-10},{10,10}})));
     Substances.Substance s26 annotation(Placement(transformation(origin={15.6693,-14}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF15(c.start=1) annotation(Placement(transformation(origin={36,62}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF15(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={36,62}, extent={{-10,-10},{10,10}})));
     Substances.Substance s4 annotation(Placement(transformation(origin={-110,16}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF22(c.start=1) annotation(Placement(transformation(origin={50,-58}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF22(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={50,-58}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfafiba uurfafiba annotation(Placement(transformation(origin={40,-14}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF7(c.start=1) annotation(Placement(transformation(origin={-28,42}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF7(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-28,42}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uuifafi uuifafi annotation(Placement(transformation(origin={-90,16}, extent={{-10,-10},{10,10}})));
     Substances.Substance s18 annotation(Placement(transformation(origin={-44,-24}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF5(c.start=1) annotation(Placement(transformation(origin={-34,66}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF5(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-34,66}, extent={{-10,-10},{10,10}})));
     Substances.Substance s32 annotation(Placement(transformation(origin={78,32}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF25(c.start=1) annotation(Placement(transformation(origin={88,96}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF25(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={88,96}, extent={{-10,-10},{10,10}})));
     Substances.Substance s34 annotation(Placement(transformation(origin={78,2}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfi uurfi annotation(Placement(transformation(origin={98,32}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurba uurba annotation(Placement(transformation(origin={-90,-74}, extent={{-10,-10},{10,10}})));
     Substances.Substance s10 annotation(Placement(transformation(origin={-110,-74}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF31(c.start=1) annotation(Placement(transformation(origin={94,-26}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF28(c.start=1) annotation(Placement(transformation(origin={94,46}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF31(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={94,-26}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF28(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={94,46}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfibi uurfibi annotation(Placement(transformation(origin={98,-88}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF17(c.start=1) annotation(Placement(transformation(origin={50,40}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF17(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={50,40}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfa uurfa annotation(Placement(transformation(origin={-24,16}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF10(c.start=1) annotation(Placement(transformation(origin={-20,-38}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF10(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-20,-38}, extent={{-10,-10},{10,10}})));
     Substances.Substance s24 annotation(Placement(transformation(origin={16,26}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF34(c.start=1) annotation(Placement(transformation(origin={88,-78}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF34(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={88,-78}, extent={{-10,-10},{10,10}})));
     Substances.Substance s36 annotation(Placement(transformation(origin={78,-38}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF14(c.start=1) annotation(Placement(transformation(origin={40,96}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF14(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={40,96}, extent={{-10,-10},{10,10}})));
     Substances.Substance s2 annotation(Placement(transformation(origin={-110,56}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF20(c.start=1) annotation(Placement(transformation(origin={44.3307,-34}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF20(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={44.3307,-34}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfabi uurfabi annotation(Placement(transformation(origin={40,76}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF13(c.start=1) annotation(Placement(transformation(origin={-14,-94}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF13(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-14,-94}, extent={{-10,-10},{10,10}})));
     Substances.Substance s16 annotation(Placement(transformation(origin={-44,16}, extent={{-10,-10},{10,10}})));
     Substances.Substance s30 annotation(Placement(transformation(origin={78,82}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF12(c.start=1) annotation(Placement(transformation(origin={-34,-94}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF23(c.start=1) annotation(Placement(transformation(origin={30,-94}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF12(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-34,-94}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF23(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={30,-94}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfafibabi uurfafibabi annotation(Placement(transformation(origin={40,-74}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uuifi uuifi annotation(Placement(transformation(origin={-90,-24}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF9(c.start=1) annotation(Placement(transformation(origin={-24,-4}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF9(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-24,-4}, extent={{-10,-10},{10,10}})));
     Substances.Substance s8 annotation(Placement(transformation(origin={-110,-44}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF29(c.start=1) annotation(Placement(transformation(origin={94,16}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF26(c.start=1) annotation(Placement(transformation(origin={106,96}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF4(c.start=1) annotation(Placement(transformation(origin={-90,-94}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF29(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={94,16}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF26(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={106,96}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF4(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-90,-94}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfiba uurfiba annotation(Placement(transformation(origin={98,2}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurbabi uurbabi annotation(Placement(transformation(origin={-24,86}, extent={{-10,-10},{10,10}})));
     Substances.Substance s22 annotation(Placement(transformation(origin={16,76}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF11(c.start=1) annotation(Placement(transformation(origin={-20,-62}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF32(c.start=1) annotation(Placement(transformation(origin={88,-54}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF18(c.start=1) annotation(Placement(transformation(origin={30,6}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF11(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-20,-62}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF32(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={88,-54}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF18(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={30,6}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uurfaba uurfaba annotation(Placement(transformation(origin={-24,-24}, extent={{-10,-10},{10,10}})));
     Substances.Substance s14 annotation(Placement(transformation(origin={-44,56}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF35(c.start=1) annotation(Placement(transformation(origin={88,-96}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF1(c.start=1) annotation(Placement(transformation(origin={-100,36}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF35(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={88,-96}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF1(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-100,36}, extent={{-10,-10},{10,10}})));
     Substances.Substance s annotation(Placement(transformation(origin={-110,96}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s3(c.start=2) annotation(Placement(transformation(origin={-70,56}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s5(c.start=2) annotation(Placement(transformation(origin={-70,16}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s7(c.start=2) annotation(Placement(transformation(origin={-70,-24}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s9(c.start=2) annotation(Placement(transformation(origin={-70,-44}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s11(c.start=2) annotation(Placement(transformation(origin={-70,-74}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s13(c.start=2) annotation(Placement(transformation(origin={-4,86}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s15(c.start=2) annotation(Placement(transformation(origin={-4,56}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s17(c.start=2) annotation(Placement(transformation(origin={-4,16}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s19(c.start=2) annotation(Placement(transformation(origin={-4,-24}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s21(c.start=2) annotation(Placement(transformation(origin={-4,-74}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s23(c.start=2) annotation(Placement(transformation(origin={60,76}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s25(c.start=2) annotation(Placement(transformation(origin={60,26}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s27(c.start=2) annotation(Placement(transformation(origin={60,-14}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s29(c.start=2) annotation(Placement(transformation(origin={60,-74}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s39(c.start=2) annotation(Placement(transformation(origin={118,-88}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s37(c.start=2) annotation(Placement(transformation(origin={118,-38}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s33(c.start=2) annotation(Placement(transformation(origin={118,32}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s31(c.start=2) annotation(Placement(transformation(origin={118,82}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s3(c(
+                            start = 2))
+                                       annotation(Placement(transformation(origin={-70,56}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s5(c(
+                            start = 2))
+                                       annotation(Placement(transformation(origin={-70,16}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s7(c(
+                            start = 2))
+                                       annotation(Placement(transformation(origin={-70,-24}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s9(c(
+                            start = 2))
+                                       annotation(Placement(transformation(origin={-70,-44}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s11(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={-70,-74}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s13(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={-4,86}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s15(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={-4,56}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s17(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={-4,16}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s19(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={-4,-24}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s21(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={-4,-74}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s23(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={60,76}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s25(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={60,26}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s27(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={60,-14}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s29(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={60,-74}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s39(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={118,-88}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s37(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={118,-38}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s33(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={118,32}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s31(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={118,82}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui annotation(Placement(transformation(origin={-90,96}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF2(c.start=1) annotation(Placement(transformation(origin={-80,36}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s1(c.start=2) annotation(Placement(transformation(origin={-70,96}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF(c.start=1) annotation(Placement(transformation(origin={-90,76}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s35(c.start=2) annotation(Placement(transformation(origin={118,2}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF2(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-80,36}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s1(c(
+                            start = 2))
+                                       annotation(Placement(transformation(origin={-70,96}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF(c(
+                                    start = 1))
+                                               annotation(Placement(transformation(origin={-90,76}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s35(c(
+                             start = 2))
+                                        annotation(Placement(transformation(origin={118,2}, extent={{-10,-10},{10,10}})));
   equation
     connect(sF16.n1,uurfafi.aF1) annotation(Line(points={{30,40},{40,35}}));
     connect(sF18.n1,uurfafiba.aF1) annotation(Line(points={{30,6},{40,-5}}));
@@ -177,58 +289,150 @@ package MassAction "Examples of mass-action kinetics reactions"
     connect(sF3.n1,uuifi.iF1) annotation(Line(points={{-90,-4},{-90,-15}}));
     connect(uurfiba.p1,s35.n1) annotation(Line(points={{109.25,2},{118,2}}));
     connect(uuifa.aF1,sF.n1) annotation(Line(points={{-90,65},{-94.375,76.0157},{-90,76}}));
+    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10}), graphics={Ellipse(fillColor={170,0,0}, fillPattern=FillPattern.Solid, extent={{-100,-25},{-50,25}}),Ellipse(fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{50,-25},{100,25}}),Line(points={{-50,0},{50,0}}, arrow={Arrow.Open,Arrow.Open}, arrowSize=30),Line(points={{0,50},{0,0}}),Ellipse(fillColor={255,255,0}, fillPattern=FillPattern.Solid, extent={{-25,50},{25,100}})}));
   end UniUni;
 
   model UniBi "Examples of uni-bi reactions"
-    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10}), graphics={Ellipse(fillColor={170,0,0}, fillPattern=FillPattern.Solid, extent={{-100,-25},{-50,25}}),Ellipse(fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{50,25},{100,75}}),Ellipse(fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{50,-75},{100,-25}}),Line(points={{-50,0},{25,0},{57.28,32.54}}, arrow={Arrow.Open,Arrow.Open}, arrowSize=30),Line(points={{25,0},{56.7,-32.01}}, arrow={Arrow.None,Arrow.Open}, arrowSize=30),Ellipse(fillColor={255,255,0}, fillPattern=FillPattern.Solid, extent={{-25,50},{25,100}}),Line(points={{0,0},{0,50}})}));
     extends BioChem.Compartments.Compartment;
-    Substances.BoundarySubstance sF3(c.start=1) annotation(Placement(transformation(origin={-90,-7}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF2(c.start=1) annotation(Placement(transformation(origin={-80,33}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s42(c.start=0.1) annotation(Placement(transformation(origin={-70,7}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF3(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-90,-7}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF2(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-80,33}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s42(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-70,7}, extent={{-10,-10},{10,10}})));
     Substances.Substance s43 annotation(Placement(transformation(origin={-70,-33}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s7(c.start=0.1) annotation(Placement(transformation(origin={-70,-21}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s44(c.start=0.1) annotation(Placement(transformation(origin={-70,-83}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s11(c.start=0.1) annotation(Placement(transformation(origin={-70,-69}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s3(c.start=0.1) annotation(Placement(transformation(origin={-70,59}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s59(c.start=0.1) annotation(Placement(transformation(origin={-70,-57}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s9(c.start=0.1) annotation(Placement(transformation(origin={-70,-45}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s5(c.start=0.1) annotation(Placement(transformation(origin={-70,19}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s17(c.start=0.1) annotation(Placement(transformation(origin={-2.5,23}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF5(c.start=1) annotation(Placement(transformation(origin={-30.5,73}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s13(c.start=0.1) annotation(Placement(transformation(origin={-3.5,94}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF13(c.start=1) annotation(Placement(transformation(origin={-12.5,-93}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s48(c.start=0.1) annotation(Placement(transformation(origin={-2.5,51}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF6(c.start=1) annotation(Placement(transformation(origin={-14.5,73}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s45(c.start=0.1) annotation(Placement(transformation(origin={-2.5,-79}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s47(c.start=0.1) annotation(Placement(transformation(origin={-2.5,11}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s19(c.start=0.1) annotation(Placement(transformation(origin={-2.5,-17}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF11(c.start=1) annotation(Placement(transformation(origin={-18.5,-61}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF9(c.start=1) annotation(Placement(transformation(origin={-22.5,-3}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF12(c.start=1) annotation(Placement(transformation(origin={-32.5,-93}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s21(c.start=0.1) annotation(Placement(transformation(origin={-2.5,-65}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s15(c.start=0.1) annotation(Placement(transformation(origin={-2.5,63}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s46(c.start=0.1) annotation(Placement(transformation(origin={-2.5,-29}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF7(c.start=1) annotation(Placement(transformation(origin={-26.5,43}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s49(c.start=0.1) annotation(Placement(transformation(origin={-3.5,81.5}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF4(c.start=1) annotation(Placement(transformation(origin={-110,-92.5}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF10(c.start=1) annotation(Placement(transformation(origin={-18.5,-37}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF8(c.start=1) annotation(Placement(transformation(origin={-18.5,31}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s41(c.start=0.1) annotation(Placement(transformation(origin={-70,47}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF(c.start=1) annotation(Placement(transformation(origin={-90,73}, extent={{-10,-10},{10,10}})));
-    Substances.BoundarySubstance sF1(c.start=1) annotation(Placement(transformation(origin={-102.5,32.5}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s40(c.start=0.1) annotation(Placement(transformation(origin={-68,87}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s(c.start=1) annotation(Placement(transformation(origin={-110,93}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s2(c.start=1) annotation(Placement(transformation(origin={-110,53}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s4(c.start=1) annotation(Placement(transformation(origin={-110,13}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s6(c.start=1) annotation(Placement(transformation(origin={-110,-27}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s8(c.start=1) annotation(Placement(transformation(origin={-110,-47}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s10(c.start=1) annotation(Placement(transformation(origin={-110,-77}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s20(c.start=1) annotation(Placement(transformation(origin={-42.5,-73}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s18(c.start=1) annotation(Placement(transformation(origin={-42.5,-23}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s16(c.start=1) annotation(Placement(transformation(origin={-42.5,17}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s14(c.start=1) annotation(Placement(transformation(origin={-42.5,57}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s12(c.start=1) annotation(Placement(transformation(origin={-42.5,87}, extent={{-10,-10},{10,10}})));
-    Substances.Substance s1(c.start=0.1) annotation(Placement(transformation(origin={-68,99}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s7(c(
+                            start = 0.1))
+                                         annotation(Placement(transformation(origin={-70,-21}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s44(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-70,-83}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s11(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-70,-69}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s3(c(
+                            start = 0.1))
+                                         annotation(Placement(transformation(origin={-70,59}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s59(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-70,-57}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s9(c(
+                            start = 0.1))
+                                         annotation(Placement(transformation(origin={-70,-45}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s5(c(
+                            start = 0.1))
+                                         annotation(Placement(transformation(origin={-70,19}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s17(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,23}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF5(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-30.5,73}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s13(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-3.5,94}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF13(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-12.5,-93}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s48(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,51}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF6(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-14.5,73}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s45(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,-79}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s47(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,11}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s19(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,-17}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF11(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-18.5,-61}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF9(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-22.5,-3}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF12(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-32.5,-93}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s21(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,-65}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s15(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,63}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s46(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-2.5,-29}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF7(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-26.5,43}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s49(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-3.5,81.5}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF4(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-110,-92.5}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF10(c(
+                                      start = 1))
+                                                 annotation(Placement(transformation(origin={-18.5,-37}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF8(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-18.5,31}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s41(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-70,47}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF(c(
+                                    start = 1))
+                                               annotation(Placement(transformation(origin={-90,73}, extent={{-10,-10},{10,10}})));
+    Substances.BoundarySubstance sF1(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={-102.5,32.5}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s40(c(
+                             start = 0.1))
+                                          annotation(Placement(transformation(origin={-68,87}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s(c(
+                           start = 1))
+                                      annotation(Placement(transformation(origin={-110,93}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s2(c(
+                            start = 1))
+                                       annotation(Placement(transformation(origin={-110,53}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s4(c(
+                            start = 1))
+                                       annotation(Placement(transformation(origin={-110,13}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s6(c(
+                            start = 1))
+                                       annotation(Placement(transformation(origin={-110,-27}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s8(c(
+                            start = 1))
+                                       annotation(Placement(transformation(origin={-110,-47}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s10(c(
+                             start = 1))
+                                        annotation(Placement(transformation(origin={-110,-77}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s20(c(
+                             start = 1))
+                                        annotation(Placement(transformation(origin={-42.5,-73}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s18(c(
+                             start = 1))
+                                        annotation(Placement(transformation(origin={-42.5,-23}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s16(c(
+                             start = 1))
+                                        annotation(Placement(transformation(origin={-42.5,17}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s14(c(
+                             start = 1))
+                                        annotation(Placement(transformation(origin={-42.5,57}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s12(c(
+                             start = 1))
+                                        annotation(Placement(transformation(origin={-42.5,87}, extent={{-10,-10},{10,10}})));
+    Substances.Substance s1(c(
+                            start = 0.1))
+                                         annotation(Placement(transformation(origin={-68,99}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniBi.Ubi ubi annotation(Placement(transformation(origin={-90,93}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniBi.Ubifa ubifa annotation(Placement(transformation(origin={-90,53.42}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniBi.Ubifafi ubifafi annotation(Placement(transformation(origin={-90,13}, extent={{-10,-10},{10,10}})));
@@ -240,64 +444,162 @@ package MassAction "Examples of mass-action kinetics reactions"
     Reactions.MassAction.Reversible.UniBi.Ubrfa ubrfa annotation(Placement(transformation(origin={-22.5,17}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniBi.Ubrbi ubrbi annotation(Placement(transformation(origin={-22.5,57}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniBi.Ubrbabi ubrbabi annotation(Placement(transformation(origin={-22.5,87}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s51(c.start=0.1) annotation(Placement(transformation(origin={61.5,23}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s50(c.start=0.1) annotation(Placement(transformation(origin={61.5,71}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF27(c.start=1) annotation(Placement(transformation(origin={95.5,69}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s25(c.start=0.1) annotation(Placement(transformation(origin={61.5,35}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s24(c.start=1) annotation(Placement(transformation(origin={17.5,27}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF25(c.start=1) annotation(Placement(transformation(origin={89.5,97}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s31(c.start=0.1) annotation(Placement(transformation(origin={119.5,91}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s22(c.start=1) annotation(Placement(transformation(origin={17.5,77}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s51(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,23}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s50(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,71}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF27(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={95.5,69}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s25(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,35}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s24(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={17.5,27}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF25(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={89.5,97}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s31(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,91}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s22(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={17.5,77}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfabi ubrfabi annotation(Placement(transformation(origin={41.5,77}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s54(c.start=0.1) annotation(Placement(transformation(origin={119.5,79}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s23(c.start=0.1) annotation(Placement(transformation(origin={61.5,83}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s55(c.start=0.1) annotation(Placement(transformation(origin={119.5,27}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s54(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,79}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s23(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,83}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s55(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,27}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfafi ubrfafi annotation(Placement(transformation(origin={41.5,27}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s30(c.start=1) annotation(Placement(transformation(origin={79.5,83}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF14(c.start=1) annotation(Placement(transformation(origin={41.5,97}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF17(c.start=1) annotation(Placement(transformation(origin={51.5,41}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s33(c.start=0.1) annotation(Placement(transformation(origin={119.5,39}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF15(c.start=1) annotation(Placement(transformation(origin={37.5,63}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s30(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={79.5,83}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF14(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={41.5,97}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF17(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={51.5,41}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s33(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,39}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF15(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={37.5,63}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfi ubrfi annotation(Placement(transformation(origin={99.5,33}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfafibi ubrfafibi annotation(Placement(transformation(origin={99.5,83}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF26(c.start=1) annotation(Placement(transformation(origin={107.5,97}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF28(c.start=1) annotation(Placement(transformation(origin={95.5,47}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s32(c.start=1) annotation(Placement(transformation(origin={79.5,33}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF16(c.start=1) annotation(Placement(transformation(origin={31.5,41}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s35(c.start=0.1) annotation(Placement(transformation(origin={119.5,9}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s37(c.start=0.1) annotation(Placement(transformation(origin={119.5,-31}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF31(c.start=1) annotation(Placement(transformation(origin={95.5,-25}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF33(c.start=1) annotation(Placement(transformation(origin={109.5,-53}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF30(c.start=1) annotation(Placement(transformation(origin={105.5,-9}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s34(c.start=1) annotation(Placement(transformation(origin={79.5,3}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF32(c.start=1) annotation(Placement(transformation(origin={89.5,-53}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF34(c.start=1) annotation(Placement(transformation(origin={89.5,-77}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s39(c.start=0.1) annotation(Placement(transformation(origin={119.5,-81}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF35(c.start=1) annotation(Placement(transformation(origin={89.5,-95}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF26(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={107.5,97}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF28(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={95.5,47}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s32(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={79.5,33}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF16(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={31.5,41}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s35(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,9}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s37(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,-31}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF31(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={95.5,-25}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF33(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={109.5,-53}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF30(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={105.5,-9}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s34(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={79.5,3}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF32(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={89.5,-53}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF34(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={89.5,-77}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s39(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,-81}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF35(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={89.5,-95}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfibabi ubrfibabi annotation(Placement(transformation(origin={99.5,-37}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfibi ubrfibi annotation(Placement(transformation(origin={99.5,-87}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s57(c.start=0.1) annotation(Placement(transformation(origin={119.5,-43}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s57(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,-43}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfiba ubrfiba annotation(Placement(transformation(origin={99.5,3}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s56(c.start=0.1) annotation(Placement(transformation(origin={119.5,-3}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s58(c.start=0.1) annotation(Placement(transformation(origin={119.5,-93}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s36(c.start=1) annotation(Placement(transformation(origin={79.5,-37}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF29(c.start=1) annotation(Placement(transformation(origin={95.5,17}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s38(c.start=1) annotation(Placement(transformation(origin={79.5,-87}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF20(c.start=1) annotation(Placement(transformation(origin={45.5,-27}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s26(c.start=1) annotation(Placement(transformation(origin={17.5,-23}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s56(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,-3}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s58(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={119.5,-93}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s36(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={79.5,-37}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF29(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={95.5,17}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s38(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={79.5,-87}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF20(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={45.5,-27}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s26(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={17.5,-23}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfafiba ubrfafiba annotation(Placement(transformation(origin={41.5,-13}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s27(c.start=0.1) annotation(Placement(transformation(origin={61.5,-7}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF18(c.start=1) annotation(Placement(transformation(origin={31.5,7}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF19(c.start=1) annotation(Placement(transformation(origin={51.5,7}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s52(c.start=0.1) annotation(Placement(transformation(origin={61.5,-19}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s29(c.start=0.1) annotation(Placement(transformation(origin={61.5,-67}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s53(c.start=0.1) annotation(Placement(transformation(origin={61.5,-79}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s27(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,-7}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF18(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={31.5,7}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF19(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={51.5,7}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s52(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,-19}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s29(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,-67}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s53(c(
+                                     start = 0.1))
+                                                  annotation(Placement(transformation(origin={61.5,-79}, extent={{-10,-10},{10,10}})));
     BioChem.Reactions.MassAction.Reversible.UniBi.Ubrfafibabi ubrfafibabi annotation(Placement(transformation(origin={41.5,-73}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.Substance s28(c.start=1) annotation(Placement(transformation(origin={17.5,-73}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF21(c.start=1) annotation(Placement(transformation(origin={31.5,-57}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF23(c.start=1) annotation(Placement(transformation(origin={31.5,-93}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF24(c.start=1) annotation(Placement(transformation(origin={51.5,-93}, extent={{-10,-10},{10,10}})));
-    BioChem.Substances.BoundarySubstance sF22(c.start=1) annotation(Placement(transformation(origin={51.5,-57}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance s28(c(
+                                     start = 1))
+                                                annotation(Placement(transformation(origin={17.5,-73}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF21(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={31.5,-57}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF23(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={31.5,-93}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF24(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={51.5,-93}, extent={{-10,-10},{10,10}})));
+    BioChem.Substances.BoundarySubstance sF22(c(
+                                              start = 1))
+                                                         annotation(Placement(transformation(origin={51.5,-57}, extent={{-10,-10},{10,10}})));
   equation
     connect(s.n1,ubi.s1) annotation(Line(points={{-110,93},{-101.25,93}}));
     connect(ubi.p1,s1.n1) annotation(Line(points={{-78.75,98},{-68,99}}));
@@ -395,6 +697,7 @@ package MassAction "Examples of mass-action kinetics reactions"
     connect(sF23.n1,ubrfafibabi.aB1) annotation(Line(points={{31.5,-93},{41.5,-82}}));
     connect(sF24.n1,ubrfafibabi.iB1) annotation(Line(points={{51.5,-93},{41.5,-82}}));
     connect(sF22.n1,ubrfafibabi.iF1) annotation(Line(points={{51.5,-57},{41.5,-64}}));
+    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10}), graphics={Ellipse(fillColor={170,0,0}, fillPattern=FillPattern.Solid, extent={{-100,-25},{-50,25}}),Ellipse(fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{50,25},{100,75}}),Ellipse(fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{50,-75},{100,-25}}),Line(points={{-50,0},{25,0},{57.28,32.54}}, arrow={Arrow.Open,Arrow.Open}, arrowSize=30),Line(points={{25,0},{56.7,-32.01}}, arrow={Arrow.None,Arrow.Open}, arrowSize=30),Ellipse(fillColor={255,255,0}, fillPattern=FillPattern.Solid, extent={{-25,50},{25,100}}),Line(points={{0,0},{0,50}})}));
   end UniBi;
 
   annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));

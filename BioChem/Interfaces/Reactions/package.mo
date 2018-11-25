@@ -1,30 +1,17 @@
 within BioChem.Interfaces;
 package Reactions "Partial models, extended by models in the subpackage Reactions"
   extends Icons.Library;
-  annotation(Documentation(info="<html>
-<h1>Reactions</h1>
- <p>
-This package contains partial reaction models that can be used as templates when composing new reactions. In fact all reactions found in the
-<a href=\"Modelica://BioChem.Reactions\">Reactions</a>
- are based on these partial reaction models.
-All reactions need at least one substrate and at least one product. This package contains base classes for any combination of substrates and products for reversible as well as irreversible reactions, as illustrated in <a href=\"#fig1\">Figure 1</a>. The first letter in the reaction name indicates the number of substrates, and the second the number of products. Finally, the third letter indicates if the reaction is reversible (r) or irreversible (i). All these information is also illustrated by the icon.
- </p>
 
-<a name=\"fig1\"></a>
-<img src=\"modelica://BioChem/Resources/Images/Reactions.png\" alt=\"Fig1:Reactions\"><br>
-<i>Figure 1:  Some of the reactions</i><br>
-
- </html>", revisions=""), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   partial model Uur "Uni-Uni reversible reaction"
     extends BioChem.Interfaces.Reactions.Basics.Reaction;
     extends BioChem.Interfaces.Reactions.Basics.OneSubstrateReversible;
     extends BioChem.Interfaces.Reactions.Basics.OneProduct;
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for the substrate";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for the product";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Uur;
 
   partial model Uui "Uni-Uni irreversible reaction"
@@ -33,10 +20,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.OneProduct;
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for the substrate";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for the product";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Uui;
 
   partial model Utr "Uni-Tri reversible reaction"
@@ -47,12 +34,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Utr;
 
   partial model Uti "Uni-Tri irreversible reaction"
@@ -63,12 +50,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Uti;
 
   partial model Ubr "Uni-Bi reversible reaction"
@@ -78,11 +65,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for the substrate";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Ubr;
 
   partial model Ubi "Uni-Bi irreversible reaction"
@@ -92,11 +79,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for the substrate";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Ubi;
 
   partial model Tur "Tri-Uni reversible reaction"
@@ -107,12 +94,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for the product";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tur;
 
   partial model Tui "Tri-Uni irreversible reaction"
@@ -123,12 +110,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for the product";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tui;
 
   partial model Ttr "Tri-Tri reversible reaction"
@@ -141,7 +128,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -149,6 +135,7 @@ All reactions need at least one substrate and at least one product. This package
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Ttr;
 
   partial model Tti "Tri-Tri irreversible reaction"
@@ -161,7 +148,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -169,6 +155,7 @@ All reactions need at least one substrate and at least one product. This package
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tti;
 
   partial model Tbr "Tri-Bi reversible reaction"
@@ -180,13 +167,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tbr;
 
   partial model Tbi "Tri-Bi irreversible reaction"
@@ -198,13 +185,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tbi;
 
   partial model Bur "Bi-Uni reversible reaction"
@@ -214,11 +201,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for substrate 1";
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for the product";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bur;
 
   partial model Bui "Bi-Uni irreversible reaction"
@@ -228,11 +215,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for substrate 1";
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for the product";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bui;
 
   partial model Btr "Bi-Tri reversible reaction"
@@ -244,13 +231,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Btr;
 
   partial model Bti "Bi-Tri irreversible reaction"
@@ -262,13 +249,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bti;
 
   partial model Bbr "Bi-Bi reversible reaction"
@@ -279,12 +266,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bbr;
 
   partial model Bbi "Bi-Bi irreversible reaction"
@@ -295,12 +282,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bbi;
 
   partial model Qbi "Quad-Bi irreversible reaction"
@@ -313,7 +300,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS4=1 "Stoichiometric coefficient for substrate 4";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -321,6 +307,7 @@ All reactions need at least one substrate and at least one product. This package
     s4.r=nS4*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qbi;
 
   partial model Qbr "Quad-Bi reversible reaction"
@@ -333,7 +320,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS4=1 "Stoichiometric coefficient for substrate 4";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -341,6 +327,7 @@ All reactions need at least one substrate and at least one product. This package
     s4.r=nS4*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qbr;
 
   partial model Qti "Quad-Tri irreversible reaction"
@@ -354,7 +341,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -363,10 +349,10 @@ All reactions need at least one substrate and at least one product. This package
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qti;
 
   partial model Qtr "Quad-Tri reversible reaction"
-    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     extends BioChem.Interfaces.Reactions.Basics.Reaction;
     extends BioChem.Interfaces.Reactions.Basics.FourSubstratesReversible;
     extends BioChem.Interfaces.Reactions.Basics.ThreeProducts;
@@ -385,10 +371,10 @@ All reactions need at least one substrate and at least one product. This package
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qtr;
 
   model Qui "Quad-Uni irreversible reaction"
-    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
     extends BioChem.Interfaces.Reactions.Basics.Reaction;
     extends BioChem.Interfaces.Reactions.Basics.FourSubstrates;
     extends BioChem.Interfaces.Reactions.Basics.OneProduct;
@@ -403,6 +389,7 @@ All reactions need at least one substrate and at least one product. This package
     s3.r=nS3*rr;
     s4.r=nS4*rr;
     p1.r=-nP1*rr;
+    annotation(Diagram(coordinateSystem(extent={{-148.5,105},{148.5,-105}}, preserveAspectRatio=true, grid={10,10})), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qui;
 
   partial model Qur "Quad-Uni reversible reaction"
@@ -414,13 +401,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nS4=1 "Stoichiometric coefficient for substrate 4";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     s4.r=nS4*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qur;
 
   partial model Qqi "Quad-Quad irreversible reaction"
@@ -435,7 +422,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -445,6 +431,7 @@ All reactions need at least one substrate and at least one product. This package
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qqi;
 
   partial model Qqr "Quad-Quad reversible reaction"
@@ -459,7 +446,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -469,6 +455,7 @@ All reactions need at least one substrate and at least one product. This package
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qqr;
 
   partial model Uqr
@@ -480,13 +467,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Uqr;
 
   partial model Uqi "Uni-Quad irreversible reaction"
@@ -498,13 +485,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Uqi;
 
   partial model Bqi "Bi-Quad irreversible reaction"
@@ -517,7 +504,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -525,6 +511,7 @@ All reactions need at least one substrate and at least one product. This package
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bqi;
 
   partial model Bqr "Bi-Quad reversible reaction"
@@ -537,7 +524,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -545,6 +531,7 @@ All reactions need at least one substrate and at least one product. This package
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bqr;
 
   partial model Tqr "Tri-Quad reversible reaction"
@@ -558,7 +545,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -567,6 +553,7 @@ All reactions need at least one substrate and at least one product. This package
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tqr;
 
   partial model Tqi "Tri-Quad irreversible reaction"
@@ -580,7 +567,6 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
@@ -589,6 +575,7 @@ All reactions need at least one substrate and at least one product. This package
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tqi;
 
   partial model Mmi "Multi-Multi irreversible reaction"
@@ -597,10 +584,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.MultipleProducts;
     BioChem.Units.StoichiometricCoefficient nS[dimS]=fill(1, dimS) "Stoichiometric coefficients for the substrates";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mmi;
 
   partial model Bmi "Bi-Multi irreversible reaction"
@@ -610,11 +597,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for substrate 1";
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bmi;
 
   partial model Qmi "Quad-Multi irreversible reaction"
@@ -626,13 +613,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nS4=1 "Stoichiometric coefficient for substrate 4";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     s4.r=nS4*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qmi;
 
   partial model Tmi "Tri-Multi irreversible reaction"
@@ -643,12 +630,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tmi;
 
   partial model Umi "Uni-Multi irreversible reaction"
@@ -657,10 +644,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.MultipleProducts;
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for substrate 1";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Umi;
 
   partial model Mqi "Multi-Quad irreversible reaction"
@@ -672,13 +659,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mqi;
 
   partial model Mti "Multi-Tri irreversible reaction"
@@ -689,12 +676,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mti;
 
   partial model Mbi "Multi-Bi irreversible reaction"
@@ -704,11 +691,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS[dimS]=fill(1, dimS) "Stoichiometric coefficients for the substrates";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mbi;
 
   partial model Mui "Multi-Uni irreversible reaction"
@@ -717,10 +704,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.OneProduct;
     BioChem.Units.StoichiometricCoefficient nS[dimS]=fill(1, dimS) "Stoichiometric coefficients for the substrates";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mui;
 
   partial model Mbr "Multi-Bi reversible reaction"
@@ -730,11 +717,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS[dimS]=fill(1, dimS) "Stoichiometric coefficients for the substrates";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mbr;
 
   partial model Mmr "Multi-Multi reversible reaction"
@@ -743,10 +730,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.MultipleProducts;
     BioChem.Units.StoichiometricCoefficient nS[dimS]=fill(1, dimS) "Stoichiometric coefficients for the substrates";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mmr;
 
   partial model Mqr "Multi-Quad reversible reaction"
@@ -758,13 +745,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
     BioChem.Units.StoichiometricCoefficient nP4=1 "Stoichiometric coefficient for product 4";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
     p4.r=-nP4*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mqr;
 
   partial model Mtr "Multi-Tri reversible reaction"
@@ -775,12 +762,12 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
     BioChem.Units.StoichiometricCoefficient nP2=1 "Stoichiometric coefficient for product 2";
     BioChem.Units.StoichiometricCoefficient nP3=1 "Stoichiometric coefficient for product 3";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
     p2.r=-nP2*rr;
     p3.r=-nP3*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mtr;
 
   partial model Mur "Multi-Uni reversible reaction"
@@ -789,10 +776,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.OneProduct;
     BioChem.Units.StoichiometricCoefficient nS[dimS]=fill(1, dimS) "Stoichiometric coefficients for the substrates";
     BioChem.Units.StoichiometricCoefficient nP1=1 "Stoichiometric coefficient for product 1";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s.r=nS*rr;
     p1.r=-nP1*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Mur;
 
   partial model Umr "Uni-Multi reversible reaction"
@@ -801,10 +788,10 @@ All reactions need at least one substrate and at least one product. This package
     extends BioChem.Interfaces.Reactions.Basics.MultipleProducts;
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for substrate 1";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Umr;
 
   partial model Bmr "Bi-Multi reversible reaction"
@@ -814,11 +801,11 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS1=1 "Stoichiometric coefficient for substrate 1";
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Bmr;
 
   partial model Qmr "Quad-Multi reversible reaction"
@@ -830,13 +817,13 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nS4=1 "Stoichiometric coefficient for substrate 4";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     s4.r=nS4*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Qmr;
 
   partial model Tmr "Tri-Multi reversible reaction"
@@ -847,12 +834,26 @@ All reactions need at least one substrate and at least one product. This package
     BioChem.Units.StoichiometricCoefficient nS2=1 "Stoichiometric coefficient for substrate 2";
     BioChem.Units.StoichiometricCoefficient nS3=1 "Stoichiometric coefficient for substrate 3";
     BioChem.Units.StoichiometricCoefficient nP[dimP]=fill(1, dimP) "Stoichiometric coefficients for the products";
-    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   equation
     s1.r=nS1*rr;
     s2.r=nS2*rr;
     s3.r=nS3*rr;
     p.r=-nP*rr;
+    annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
   end Tmr;
 
+  annotation(Documentation(info="<html>
+<h1>Reactions</h1>
+ <p>
+This package contains partial reaction models that can be used as templates when composing new reactions. In fact all reactions found in the
+<a href=\"Modelica://BioChem.Reactions\">Reactions</a>
+ are based on these partial reaction models.
+All reactions need at least one substrate and at least one product. This package contains base classes for any combination of substrates and products for reversible as well as irreversible reactions, as illustrated in <a href=\"#fig1\">Figure 1</a>. The first letter in the reaction name indicates the number of substrates, and the second the number of products. Finally, the third letter indicates if the reaction is reversible (r) or irreversible (i). All these information is also illustrated by the icon.
+ </p>
+
+<a name=\"fig1\"></a>
+<img src=\"modelica://BioChem/Resources/Images/Reactions.png\" alt=\"Fig1:Reactions\"><br>
+<i>Figure 1:  Some of the reactions</i><br>
+
+ </html>", revisions=""), Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, grid={10,10})));
 end Reactions;
