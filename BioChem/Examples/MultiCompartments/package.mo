@@ -4,52 +4,60 @@ package MultiCompartments "Examples using different compartments for the reactin
 
   model GlucoseMetabolism "Glycolysis and the TCA"
     extends BioChem.Compartments.Compartment;
-    Substances.Substance Glucose(c(
-                                 start = 1/1000))
-                                                 "Glucose" annotation(Placement(transformation(origin={-0.0,140.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+  Substances.Substance Glucose(c(start=1/1000)) "Glucose" annotation (Placement(
+        transformation(
+        origin={-0.0,140.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=-90)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui5(k1=1) annotation(Placement(transformation(origin={0.0,120.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance G6P(c(
-                             start = 0))
-                                        "Glucose-6-phosphate" annotation(Placement(transformation(origin={0.0,100.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+  Substances.Substance G6P(c(start=0)) "Glucose-6-phosphate" annotation (
+      Placement(transformation(
+        origin={0.0,100.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=-90)));
     Reactions.MassAction.Reversible.UniUni.Uur uur(k1=1) annotation(Placement(transformation(origin={-0.0,80.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance F6P(c(
-                             start = 0))
-                                        "Fructose-6-phosphate" annotation(Placement(transformation(origin={-0.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+  Substances.Substance F6P(c(start=0)) "Fructose-6-phosphate" annotation (
+      Placement(transformation(
+        origin={-0.0,60.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=-90)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui annotation(Placement(transformation(origin={0.0,40.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance F16BP(c(
-                               start = 0))
-                                          "Fructose-1,6-bisphosphate" annotation(Placement(transformation(origin={-0.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-90)));
+  Substances.Substance F16BP(c(start=0)) "Fructose-1,6-bisphosphate"
+    annotation (Placement(transformation(
+        origin={-0.0,20.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=-90)));
     Reactions.MassAction.Irreversible.UniBi.Ubi ubi annotation(Placement(transformation(origin={-0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
     Reactions.MassAction.Reversible.UniUni.Uur uur1 annotation(Placement(transformation(origin={0.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance G3P(c(
-                             start = 0))
-                                        "Glyceraldehyde-3-phosphate" annotation(Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance DHAP1(c(
-                               start = 0))
-                                          "Dihydroxyacetone phosphate" annotation(Placement(transformation(origin={30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance GA3P(c(
-                              start = 0))
-                                         "Glycerate-3-phosphate" annotation(Placement(transformation(origin={-0.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance Pyruvate(c(
-                                  start = 0))
-                                             annotation(Placement(transformation(origin={-0.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+  Substances.Substance G3P(c(start=0)) "Glyceraldehyde-3-phosphate" annotation
+    (Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,
+            10.0}})));
+  Substances.Substance DHAP1(c(start=0)) "Dihydroxyacetone phosphate"
+    annotation (Placement(transformation(origin={30.0,-30.0}, extent={{-10.0,-10.0},
+            {10.0,10.0}})));
+  Substances.Substance GA3P(c(start=0)) "Glycerate-3-phosphate" annotation (
+      Placement(transformation(origin={-0.0,-80.0}, extent={{-10.0,-10.0},{10.0,
+            10.0}})));
+  Substances.Substance Pyruvate(c(start=0)) annotation (Placement(
+        transformation(origin={-0.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     BioChem.Examples.MultiCompartments.Utilities.TCA TCA1 annotation(Placement(transformation(origin={70.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
     Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa annotation(Placement(transformation(origin={30.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance G2P1(c(
-                              start = 0))
-                                         "Glycerate-2-phosphate" annotation(Placement(transformation(origin={-60.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance PEP1(c(
-                              start = 0))
-                                         "Phosphoenol pyruvate" annotation(Placement(transformation(origin={-60.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+  Substances.Substance G2P1(c(start=0)) "Glycerate-2-phosphate" annotation (
+      Placement(transformation(origin={-60.0,-80.0}, extent={{-10.0,-10.0},{
+            10.0,10.0}})));
+  Substances.Substance PEP1(c(start=0)) "Phosphoenol pyruvate" annotation (
+      Placement(transformation(origin={-60.0,-130.0}, extent={{-10.0,-10.0},{
+            10.0,10.0}})));
     Reactions.MassAction.Reversible.UniUni.Uur uur2 annotation(Placement(transformation(origin={-30.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui4 annotation(Placement(transformation(origin={-30.0,-130.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui3 annotation(Placement(transformation(origin={-80.0,-105.6444}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-    Substances.Substance G13BP(c(
-                               start = 0))
-                                          "Glycerate-1,3-bisphosphate" annotation(Placement(transformation(origin={60.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+  Substances.Substance G13BP(c(start=0)) "Glycerate-1,3-bisphosphate"
+    annotation (Placement(transformation(origin={60.0,-80.0}, extent={{-10.0,-10.0},
+            {10.0,10.0}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui2 annotation(Placement(transformation(origin={30.0,-80.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui1 annotation(Placement(transformation(origin={16.5092,-56.5092}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-28.8073)));
-    Substances.BoundarySubstance pyruvateDehydrogenase annotation(Placement(transformation(origin={30.0,-110.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
+  Substances.BoundarySubstance pyruvateDehydrogenase annotation (Placement(
+        transformation(origin={30.0,-110.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
   equation
     connect(uuifa.aF1,pyruvateDehydrogenase.n1) annotation(Line(origin={30.0,-113.6667}, points={{0.0,-7.3333},{0.0,3.6667},{0.0,3.6667}}, smooth=Smooth.Bezier));
     connect(uui1.p1,G13BP.n1) annotation(Line(origin={-1.7639,7.5306}, points={{28.1308,-69.4608},{61.7639,-87.5306}}));
@@ -88,9 +96,8 @@ package MultiCompartments "Examples using different compartments for the reactin
   model BigCompartmentReversible
     extends BioChem.Compartments.Compartment;
     BioChem.Reactions.MichaelisMenten.Uur uur annotation(Placement(transformation(origin={0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-    Substances.Substance substance(c(
-                                   start = 2))
-                                              annotation(Placement(transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+  Substances.Substance substance(c(start=2)) annotation (Placement(
+        transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     BioChem.Examples.MultiCompartments.Utilities.SmallCompartment smallCompartment annotation(Placement(transformation(origin={-30.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
   equation
     connect(smallCompartment.substanceConnector,uur.s1) annotation(Line(origin={-23.75,-6.33}, points={{-6.25,-12.6733},{-6.25,6.33},{12.5,6.3267}}, smooth=Smooth.Bezier));
@@ -102,7 +109,8 @@ package MultiCompartments "Examples using different compartments for the reactin
     extends BioChem.Compartments.Compartment(V(start=3));
     Reactions.MassAction.Irreversible.UniUni.Uui uui annotation(Placement(transformation(origin={0.0,-0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-360)));
     BioChem.Examples.MultiCompartments.Utilities.SmallCompartment smallCompartment annotation(Placement(transformation(origin={-40.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-360)));
-    Substances.Substance substance annotation(Placement(transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+  Substances.Substance substance annotation (Placement(transformation(origin={
+            40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
   equation
     connect(smallCompartment.substanceConnector,uui.s1) annotation(Line(origin={-30.4167,-9.6667}, points={{-9.5833,-19.3333},{-9.5833,9.6667},{19.1667,9.6667}}, smooth=Smooth.Bezier));
     connect(uui.p1,substance.n1) annotation(Line(origin={25.625,0.0}, points={{-14.375,0.0},{14.375,-0.0}}));
@@ -112,33 +120,54 @@ package MultiCompartments "Examples using different compartments for the reactin
   package Utilities
     model TCA "Tricarboxylic acid cycle"
       extends BioChem.Compartments.Compartment;
-      BioChem.Substances.Substance oxaloacetate(c(
-                                                start = 1/10000))
-                                                                 annotation(Placement(transformation(origin={-30.0,60.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance oxaloacetate(c(start=1/10000)) annotation (
+        Placement(transformation(origin={-30.0,60.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}})));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa5 annotation(Placement(transformation(origin={-70.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=90)));
-      BioChem.Substances.BoundarySubstance succinateThiokinase annotation(Placement(transformation(origin={-0.0,-90.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.Substance alphaKetoglutarate annotation(Placement(transformation(origin={70.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.BoundarySubstance succinateThiokinase annotation (
+        Placement(transformation(origin={-0.0,-90.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}})));
+    BioChem.Substances.Substance alphaKetoglutarate annotation (Placement(
+          transformation(origin={70.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       BioChem.Reactions.MassAction.Irreversible.BiUni.Buifa buifa annotation(Placement(transformation(origin={-0.0,65.5702}, extent={{-10.0,-11.0},{10.0,11.0}}, rotation=-360)));
-      BioChem.Substances.BoundarySubstance fumarase annotation(Placement(transformation(origin={-90.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.BoundarySubstance fumarase annotation (Placement(
+          transformation(origin={-90.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa3 annotation(Placement(transformation(origin={-0.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180)));
-      BioChem.Substances.Substance succinate annotation(Placement(transformation(origin={-30.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance succinate annotation (Placement(transformation(
+            origin={-30.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa1 annotation(Placement(transformation(origin={70.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=270)));
-      BioChem.Substances.Substance isocitrate annotation(Placement(transformation(origin={70.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.Substance malate annotation(Placement(transformation(origin={-70.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.BoundarySubstance succinateDehydrogenase annotation(Placement(transformation(origin={-70.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.Substance succinylCoA annotation(Placement(transformation(origin={30.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.Substance fumarate annotation(Placement(transformation(origin={-70.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.BoundarySubstance alphaKetoglutarateDehydrogenase annotation(Placement(transformation(origin={70.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance isocitrate annotation (Placement(
+          transformation(origin={70.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance malate annotation (Placement(transformation(
+            origin={-70.0,20.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.BoundarySubstance succinateDehydrogenase annotation (
+        Placement(transformation(origin={-70.0,-70.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}})));
+    BioChem.Substances.Substance succinylCoA annotation (Placement(
+          transformation(origin={30.0,-70.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance fumarate annotation (Placement(transformation(
+            origin={-70.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.BoundarySubstance alphaKetoglutarateDehydrogenase
+      annotation (Placement(transformation(origin={70.0,-70.0}, extent={{-10.0,
+              -10.0},{10.0,10.0}})));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa4 annotation(Placement(transformation(origin={-55.8579,45.8579}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=45)));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa6 annotation(Placement(transformation(origin={-55.8579,-55.8579}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=135)));
       BioChem.Reactions.MassAction.Reversible.UniUni.Uurfa uurfa(k2=1) annotation(Placement(transformation(origin={55.8579,45.8579}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-45)));
       BioChem.Reactions.MassAction.Irreversible.UniUni.Uuifa uuifa2 annotation(Placement(transformation(origin={55.8579,-55.8579}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-135)));
-      BioChem.Substances.Substance acetylCoA annotation(Placement(transformation(origin={-30.0,80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.Substance citrate annotation(Placement(transformation(origin={30.0,65.5702}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      BioChem.Substances.BoundarySubstance malateDehydrogenase annotation(Placement(transformation(origin={-70.0,60.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
-      BioChem.Substances.BoundarySubstance aconitase annotation(Placement(transformation(origin={70.0,60.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
-      BioChem.Substances.BoundarySubstance citrateSynthase annotation(Placement(transformation(origin={-0.0,90.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
-      BioChem.Substances.BoundarySubstance isocitrateDehydrogenase annotation(Placement(transformation(origin={90.0,-5.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance acetylCoA annotation (Placement(transformation(
+            origin={-30.0,80.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.Substance citrate annotation (Placement(transformation(
+            origin={30.0,65.5702}, extent={{-10.0,-10.0},{10.0,10.0}})));
+    BioChem.Substances.BoundarySubstance malateDehydrogenase annotation (
+        Placement(transformation(origin={-70.0,60.0}, extent={{-10.0,10.0},{
+              10.0,-10.0}})));
+    BioChem.Substances.BoundarySubstance aconitase annotation (Placement(
+          transformation(origin={70.0,60.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
+    BioChem.Substances.BoundarySubstance citrateSynthase annotation (Placement(
+          transformation(origin={-0.0,90.0}, extent={{-10.0,10.0},{10.0,-10.0}})));
+    BioChem.Substances.BoundarySubstance isocitrateDehydrogenase annotation (
+        Placement(transformation(origin={90.0,-5.0}, extent={{-10.0,-10.0},{
+              10.0,10.0}})));
     BioChem.Interfaces.Nodes.SubstanceConnector sPyruvate annotation (Placement(
           transformation(
           origin={-30.0,94.5861},
@@ -185,9 +214,8 @@ package MultiCompartments "Examples using different compartments for the reactin
 
     model SmallCompartment "Michaelis-Menten reaction between two compartments"
       extends BioChem.Compartments.Compartment;
-      BioChem.Substances.Substance substance(c(
-                                             start = 1))
-                                                        annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
+    BioChem.Substances.Substance substance(c(start=1))
+      annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
     BioChem.Interfaces.Nodes.SubstanceConnector substanceConnector annotation (
         Placement(transformation(origin={60.0,0.0}, extent={{-10.0,-10.0},{10.0,
               10.0}}), iconTransformation(origin={0.0,110.0}, extent={{-15.0,-15.0},
