@@ -4,19 +4,11 @@ package Examples "Some examples of BioChem models"
 
   model InsulinSignaling_Sedaghat "Metabolic insulin signaling pathway in rat adipocytes"
     extends BioChem.Compartments.Compartment;
-    Substances.Substance irPMembIns(c(
-                                    start = 0))
-                                               "Phosphorylated insulin receptor at plasma membrane, one insulin bound" annotation(Placement(transformation(origin={10,30}, extent={{-10,-10},{10,10}})));
+    Substances.Substance irPMembIns(c(start = 0)) "Phosphorylated insulin receptor at plasma membrane, one insulin bound" annotation(Placement(transformation(origin={10,30}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui(k1=2500/60) annotation(Placement(transformation(origin={-10,30}, extent={{-10,-10},{10,10}})));
-    Substances.Substance irInt(c(
-                               start = 1/10000000000000.0))
-                                                           "Internal IR" annotation(Placement(transformation(origin={-70,-50}, extent={{-10,-10},{10,10}})));
-    Substances.Substance irPIntIns(c(
-                                   start = 0))
-                                              "Internal phosphorylated insulin receptor, one insulin" annotation(Placement(transformation(origin={-34,-10}, extent={{-10,-10},{10,10}})));
-    Substances.Substance irPInt2Ins(c(
-                                    start = 0))
-                                               "Internal phosphorylated insulin receptor, two insulin bound" annotation(Placement(transformation(origin={-4,-10}, extent={{-10,-10},{10,10}})));
+    Substances.Substance irInt(c(start = 1/10000000000000.0)) "Internal IR" annotation(Placement(transformation(origin={-70,-50}, extent={{-10,-10},{10,10}})));
+    Substances.Substance irPIntIns(c(start = 0)) "Internal phosphorylated insulin receptor, one insulin" annotation(Placement(transformation(origin={-34,-10}, extent={{-10,-10},{10,10}})));
+    Substances.Substance irPInt2Ins(c(start = 0)) "Internal phosphorylated insulin receptor, two insulin bound" annotation(Placement(transformation(origin={-4,-10}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui2(k1=0.461/60) annotation(Placement(transformation(origin={-38,-50}, extent={{-10,-10},{10,10}}, rotation=180)));
     Reactions.MassAction.Reversible.BiUni.Bur bur2(k1=60000000/60, k2=100*0.2/60) annotation(Placement(transformation(origin={30,50}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.BiUni.Bur bur1(k2=0.2/60, k1=60000000/60) annotation(Placement(transformation(origin={-54,50}, extent={{-10,-10},{10,10}})));
@@ -24,27 +16,12 @@ package Examples "Some examples of BioChem models"
     Reactions.MassAction.Reversible.UniUni.Uur uur3(k1=0.00021/60, k2=0.0021/60) annotation(Placement(transformation(origin={20,10}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Irreversible.UniUni.Uui uui1(k1=0.461/60) annotation(Placement(transformation(origin={-51.5948,-30}, extent={{-10,-10},{10,10}}, rotation=180)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui3(k1=0.2/60) annotation(Placement(transformation(origin={-50,20}, extent={{-10,-10},{10,10}}, rotation=180)));
-    Substances.Substance Insulin(c(
-                                 start = 1/10000000))
-                                                     "Insulin" annotation(Placement(transformation(origin={-70,70}, extent={{-10,-10},{10,10}})));
+    Substances.Substance Insulin(c(start = 1/10000000)) "Insulin" annotation(Placement(transformation(origin={-70,70}, extent={{-10,-10},{10,10}})));
     Reactions.MassAction.Reversible.UniUni.Uur uur2(k1=0.00021/60, k2=0.0021/60) annotation(Placement(transformation(origin={-17.5,10}, extent={{-10,-10},{10,10}})));
-    Substances.Substance irMembIns(c(
-                                   start = 0))
-                                              "Insulin receptor at plasma membrane, one insulin bound" annotation(Placement(transformation(origin={-30,30}, extent={{-10,-10},{10,10}})));
-    Substances.Substance irMemb(c(
-                                start = 9/10000000000000.0))
-                                                            annotation(Placement(transformation(origin={-70,30}, extent={{-10,-10},{10,10}})));
-    Substances.Substance irPMemb2Ins(c(
-                                     start = 0))
-                                                "Phosphorylated insulin receptor at plasma membrane, two insulin bound" annotation(Placement(transformation(origin={50,30}, extent={{-10,-10},{10,10}})));
-  Interfaces.Nodes.SubstanceConnector sInsulin "Connector for insulin"
-    annotation (Placement(transformation(
-        origin={0.0,100.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=180), iconTransformation(
-        origin={-0.0,115.0},
-        extent={{-15.0,-15.0},{15.0,15.0}},
-        rotation=180)));
+    Substances.Substance irMembIns(c(start = 0)) "Insulin receptor at plasma membrane, one insulin bound" annotation(Placement(transformation(origin={-30,30}, extent={{-10,-10},{10,10}})));
+    Substances.Substance irMemb(c(start = 9/10000000000000.0)) annotation(Placement(transformation(origin={-70,30}, extent={{-10,-10},{10,10}})));
+    Substances.Substance irPMemb2Ins(c(start = 0)) "Phosphorylated insulin receptor at plasma membrane, two insulin bound" annotation(Placement(transformation(origin={50,30}, extent={{-10,-10},{10,10}})));
+  Interfaces.Nodes.SubstanceConnector sInsulin "Connector for insulin" annotation(Placement(transformation(origin={0.0,100.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180), iconTransformation(origin={-0.0,115.0}, extent={{-15.0,-15.0},{15.0,15.0}}, rotation=180)));
   equation
     connect(sInsulin,Insulin.n1) annotation(Line(points={{0.0,100.0},{0.0,70.04},{-70.0,70.0}}, smooth=Smooth.Bezier));
     connect(irPInt2Ins.n1,uur3.s1) annotation(Line(points={{-4,-10},{-4.267,10.24},{8.75,10}}, smooth=Smooth.Bezier));
@@ -82,56 +59,28 @@ package Examples "Some examples of BioChem models"
   model Glycolysis "Glycolysis"
     extends BioChem.Compartments.Compartment;
     Reactions.MassAction.Irreversible.UniUni.Uui uui1 annotation(Placement(transformation(origin={1.83964e-13,-3.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=270)));
-    Substances.Substance PEP1(c(
-                              start = 0))
-                                         "Phosphoenol pyruvate" annotation(Placement(transformation(origin={2.96307e-12,-108.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
+    Substances.Substance PEP1(c(start = 0)) "Phosphoenol pyruvate" annotation(Placement(transformation(origin={2.96307e-12,-108.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui4 annotation(Placement(transformation(origin={1.19682e-13,-123.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-90)));
     Reactions.MassAction.Reversible.UniUni.Uur uur2 annotation(Placement(transformation(origin={1.1291e-13,-63.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
-    Substances.Substance G13BP(c(
-                               start = 0))
-                                          "Glycerate-1,3-bisphosphate" annotation(Placement(transformation(origin={1.16462e-13,-18.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
+    Substances.Substance G13BP(c(start = 0)) "Glycerate-1,3-bisphosphate" annotation(Placement(transformation(origin={1.16462e-13,-18.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
     Reactions.MassAction.Reversible.UniUni.Uur uur(k1=1) annotation(Placement(transformation(origin={1.13798e-13,93.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-90)));
     Reactions.MassAction.Reversible.UniUni.Uur uur1 annotation(Placement(transformation(origin={1.17351e-13,18.75}, extent={{-7.5,-7.5},{7.5,7.5}})));
     Reactions.MassAction.Irreversible.UniBi.Ubi ubi annotation(Placement(transformation(origin={1.60982e-14,33.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=270)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui3 annotation(Placement(transformation(origin={-6.3094e-13,-93.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=270)));
-    Substances.Substance G2P1(c(
-                              start = 0))
-                                         "Glycerate-2-phosphate" annotation(Placement(transformation(origin={1.03362e-13,-78.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-630)));
+    Substances.Substance G2P1(c(start = 0)) "Glycerate-2-phosphate" annotation(Placement(transformation(origin={1.03362e-13,-78.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-630)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui2 annotation(Placement(transformation(origin={1.14242e-13,-33.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-90)));
-    Substances.Substance GA3P(c(
-                              start = 0))
-                                         "Glycerate-3-phosphate" annotation(Placement(transformation(origin={1.06248e-13,-48.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
+    Substances.Substance GA3P(c(start = 0)) "Glycerate-3-phosphate" annotation(Placement(transformation(origin={1.06248e-13,-48.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui5(k1=1) annotation(Placement(transformation(origin={1.03287e-11,123.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-90)));
     Reactions.MassAction.Irreversible.UniUni.Uui uui annotation(Placement(transformation(origin={1.91513e-13,63.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-90)));
-    Substances.Substance Pyruvate(c(
-                                  start = 0))
-                                             annotation(Placement(transformation(origin={1.19571e-13,-138.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-360)));
-    Substances.Substance Glucose(c(
-                                 start = 1))
+    Substances.Substance Pyruvate(c(start = 0)) annotation(Placement(transformation(origin={1.19571e-13,-138.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-360)));
+    Substances.Substance Glucose(c(start = 1))
                                             "Glucose" annotation(Placement(transformation(origin={3.32706e-16,139.222}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
-    Substances.Substance G6P(c(
-                             start = 0))
-                                        "Glucose-6-phosphate" annotation(Placement(transformation(origin={1.13798e-13,108.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
-    Substances.Substance F6P(c(
-                             start = 0))
-                                        "Fructose-6-phosphate" annotation(Placement(transformation(origin={2.39286e-12,78.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-630)));
-    Substances.Substance F16BP(c(
-                               start = 0))
-                                          "Fructose-1,6-bisphosphate" annotation(Placement(transformation(origin={1.13354e-13,48.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
-    Substances.Substance G3P(c(
-                             start = 0))
-                                        "Glyceraldehyde-3-phosphate" annotation(Placement(transformation(origin={-15,18.75}, extent={{-7.5,-7.5},{7.5,7.5}})));
-    Substances.Substance DHAP(c(
-                              start = 0))
-                                         "Dihydroxyacetone phosphate" annotation(Placement(transformation(origin={15,18.75}, extent={{-7.5,-7.5},{7.5,7.5}})));
-  BioChem.Interfaces.Nodes.SubstanceConnector sGlucose annotation (Placement(
-        transformation(
-        origin={0.0,147.5},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=180), iconTransformation(
-        origin={0.0,115.0},
-        extent={{-15.0,-15.0},{15.0,15.0}},
-        rotation=180)));
+    Substances.Substance G6P(c(start = 0)) "Glucose-6-phosphate" annotation(Placement(transformation(origin={1.13798e-13,108.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
+    Substances.Substance F6P(c(start = 0)) "Fructose-6-phosphate" annotation(Placement(transformation(origin={2.39286e-12,78.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-630)));
+    Substances.Substance F16BP(c(start = 0)) "Fructose-1,6-bisphosphate" annotation(Placement(transformation(origin={1.13354e-13,48.75}, extent={{-7.5,-7.5},{7.5,7.5}}, rotation=-270)));
+    Substances.Substance G3P(c(start = 0)) "Glyceraldehyde-3-phosphate" annotation(Placement(transformation(origin={-15,18.75}, extent={{-7.5,-7.5},{7.5,7.5}})));
+    Substances.Substance DHAP(c(start = 0)) "Dihydroxyacetone phosphate" annotation(Placement(transformation(origin={15,18.75}, extent={{-7.5,-7.5},{7.5,7.5}})));
+  BioChem.Interfaces.Nodes.SubstanceConnector sGlucose annotation (Placement(transformation(origin={0.0,147.5}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=180), iconTransformation(origin={0.0,115.0}, extent={{-15.0,-15.0},{15.0,15.0}}, rotation=180)));
   Interfaces.Nodes.SubstanceConnector sPyruvate annotation (Placement(
         transformation(origin={-22.5,-147.5}, extent={{-10.0,-10.0},{10.0,10.0}}),
         iconTransformation(origin={-27.5,-112.5}, extent={{-12.5,-12.5},{12.5,
@@ -177,13 +126,9 @@ package Examples "Some examples of BioChem models"
 
   model EnzMM "An enzymatic reaction with Michaelis-Menten kinetics"
     extends BioChem.Compartments.Compartment;
-    Substances.Substance F6P(c(
-                             start = 2))
-                                        "Fructose-6-phosphate" annotation(Placement(transformation(origin={10,10}, extent={{-10,-10},{10,10}})));
+    Substances.Substance F6P(c(start = 2)) "Fructose-6-phosphate" annotation(Placement(transformation(origin={10,10}, extent={{-10,-10},{10,10}})));
     Reactions.MichaelisMenten.Uur uur(vF=1.5, KmS=0.1, KmP=0.05) annotation(Placement(transformation(origin={-10,10}, extent={{-10,-10},{10,10}})));
-    Substances.Substance G6P(c(
-                             start = 1))
-                                        "Glucose-6-phosphate" annotation(Placement(transformation(origin={-30,10}, extent={{-10,-10},{10,10}})));
+    Substances.Substance G6P(c(start = 1)) "Glucose-6-phosphate" annotation(Placement(transformation(origin={-30,10}, extent={{-10,-10},{10,10}})));
   equation
     connect(uur.p1,F6P.n1) annotation(Line(points={{1.25,10},{10,10}}));
     connect(G6P.n1,uur.s1) annotation(Line(points={{-30,10},{-21.25,10}}));
@@ -861,12 +806,8 @@ See
       parameter Real kt;
       BioChem.Reactions.FastEquilibrium.Uuf vH6P(kP1=kh) "Fast equilibrium reaction for the compound of G6P and F6P" annotation(Placement(transformation(origin={-80.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       centralMetabolism.cytosol.vald_ vald(kt=kt) "vald" annotation(Placement(transformation(origin={0.2253,-40.109}, extent={{-10.0,10.0},{10.0,-10.0}})));
-      centralMetabolism.cytosol.DHAP_ DHAP(c(
-                                           start = 0.07427/(1 + kt)))
-                                                                     annotation(Placement(transformation(origin={20.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      centralMetabolism.cytosol.G3P_ G3P(c(
-                                         start = 0.07427*kt/(1 + kt)))
-                                                                      annotation(Placement(transformation(origin={60.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+      centralMetabolism.cytosol.DHAP_ DHAP(c(start = 0.07427/(1 + kt))) annotation(Placement(transformation(origin={20.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+      centralMetabolism.cytosol.G3P_ G3P(c(start = 0.07427*kt/(1 + kt))) annotation(Placement(transformation(origin={60.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       centralMetabolism.cytosol.vgpdh_ vgpdh_1(badp=badp) annotation(Placement(transformation(origin={80.0,-30.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       BioChem.Reactions.FastEquilibrium.Uuf vT3P(kS1=1, kP1=kt) "Fast equilibrium reaction for the compound of G6P and F6P" annotation(Placement(transformation(origin={40.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     equation
@@ -1032,8 +973,7 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
     end extra_cellular;
 
     model mitochondria
-      extends BioChem.Compartments.Compartment(V(
-                                               start = 2));
+      extends BioChem.Compartments.Compartment(V(start = 2));
       model NADH_
         extends BioChem.Substances.Substance;
         annotation(__MathCore(RDF="<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:vCard=\"http://www.w3.org/2001/vcard-rdf/3.0#\" xmlns:bqbiol=\"http://biomodels.net/biology-qualifiers/\" xmlns:bqmodel=\"http://biomodels.net/model-qualifiers/\">
@@ -1076,12 +1016,8 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
         rr=VmaxN*s1.c/(KmNADH + s1.c);
       end vn_;
 
-      centralMetabolism.mitochondria.NADH_ NADHm(c(
-                                                 start = 0))
-                                                            "NADH" annotation(Placement(transformation(origin={-20.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
-      centralMetabolism.mitochondria.NAD_ NADm(c(
-                                               start = 0))
-                                                          "NAD" annotation(Placement(transformation(origin={20.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+      centralMetabolism.mitochondria.NADH_ NADHm(c(start = 0)) "NADH" annotation(Placement(transformation(origin={-20.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
+      centralMetabolism.mitochondria.NAD_ NADm(c(start = 0)) "NAD" annotation(Placement(transformation(origin={20.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
       centralMetabolism.mitochondria.jox_ jox(badp=badp) "jox" annotation(Placement(transformation(origin={-0.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}})));
     BioChem.Interfaces.Nodes.SubstrateConnector node_ADP annotation (Placement(
           transformation(origin={-20.0,10.0}, extent={{-10.0,-10.0},{10.0,10.0}}),
@@ -2455,8 +2391,7 @@ See
   package GlucoseInsulinModel
     extends BioChem.Icons.Example;
     model GlucoseInsulinModel
-      extends BioChem.Compartments.MainCompartment(V(
-                                                   start = 1.0));
+      extends BioChem.Compartments.MainCompartment(V(start = 1.0));
       BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GastroIntestinalTract GastroIntestinalTract annotation(Placement(transformation(origin={-50,80}, extent={{-10,-10},{10,10}})));
       BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.TissueGlucose TissueGlucose annotation(Placement(transformation(origin={0,60}, extent={{-10,-10},{10,10}})));
       BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GlucoseRenalExcretion GlucoseRenalExcretion annotation(Placement(transformation(origin={125.793,-4.74893}, extent={{-10,-10},{10,10}})));
@@ -2529,33 +2464,24 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
       package Parts
         extends BioChem.Icons.Library;
         model GastroIntestinalTract
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
           BioChem.Units.Concentration ra_signal;
           BioChem.Units.Concentration q_sto;
           BioChem.Units.Concentration d;
           parameter Real f=0.9;
           parameter Real BW=78;
-          BioChem.Substances.Substance Q_sto2(c(
-                                              start = 0))
-                                                         annotation(Placement(transformation(origin={0,50}, extent={{-10,-10},{10,10}})));
-          BioChem.Substances.Substance Q_gut(c(
-                                             start = 0))
-                                                        annotation(Placement(transformation(origin={0,-20}, extent={{-10,-10},{10,10}})));
+          BioChem.Substances.Substance Q_sto2(c(start = 0)) annotation(Placement(transformation(origin={0,50}, extent={{-10,-10},{10,10}})));
+          BioChem.Substances.Substance Q_gut(c(start = 0)) annotation(Placement(transformation(origin={0,-20}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction k_abs(k=0.057) annotation(Placement(transformation(origin={38.33,-20}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.k_empt k_empt1 annotation(Placement(transformation(origin={0,17.8419}, extent={{-10,-10},{10,10}}, rotation=-90)));
-          BioChem.Substances.Substance Q_sto1(c(
-                                              start = 0))
-                                                         annotation(Placement(transformation(origin={-60,50}, extent={{-10,-10},{10,10}})));
+          BioChem.Substances.Substance Q_sto1(c(start = 0)) annotation(Placement(transformation(origin={-60,50}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.dirac dirac annotation(Placement(transformation(origin={-100,50}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance Q_sto(c(start=0)=q_sto) annotation(Placement(transformation(origin={100,30}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance D(c(start=0)=d) annotation(Placement(transformation(origin={100,5.76656}, extent={{-10,-10},{10,10}})));
         BioChem.Interfaces.Nodes.SubstrateConnector Ra_connector annotation (
             Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}),
               iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
-          BioChem.Substances.BoundarySubstance GlucoseIntake(c(
-                                                             start = 78000))
-                                                                            annotation(Placement(transformation(origin={-130,50}, extent={{-10,-10},{10,10}})));
+          BioChem.Substances.BoundarySubstance GlucoseIntake(c(start = 78000)) annotation(Placement(transformation(origin={-130,50}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction k_gri(k=0.0558) annotation(Placement(transformation(origin={-28.43,50}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.BoundarySubstance End annotation(Placement(transformation(origin={80,-20}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance Ra_calc(c=ra_signal) annotation(Placement(transformation(origin={0,-50}, extent={{-10,-10},{10,10}})));
@@ -2578,8 +2504,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end GastroIntestinalTract;
 
         model BetaCell
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
           BioChem.Units.Concentration i_po(start=3.6);
           BioChem.Units.Concentration g;
           BioChem.Units.Concentration g_p;
@@ -2630,8 +2555,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end BetaCell;
 
         model PlasmaInsulin
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
           BioChem.Units.Concentration i_p_signal;
           BioChem.Units.Concentration i_p;
           BioChem.Units.Concentration i_signal;
@@ -2664,8 +2588,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end PlasmaInsulin;
 
         model PlasmaGlucose
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
           parameter Real V_G=1.88;
           BioChem.Units.Concentration g_p_signal;
           BioChem.Units.Concentration g_p;
@@ -2718,13 +2641,10 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end PlasmaGlucose;
 
         model LiverInsulin
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
           BioChem.Units.Concentration s;
           BioChem.Units.Concentration s_signal;
-          BioChem.Substances.Substance I_l(c(
-                                           start = 5))
-                                                      annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
+          BioChem.Substances.Substance I_l(c(start = 5)) annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance S_signal(c=s_signal) annotation(Placement(transformation(origin={-70,50}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.m_3 m_3 annotation(Placement(transformation(origin={-70,0}, extent={{10,-10},{-10,10}})));
         BioChem.Interfaces.Nodes.ProductConnector S_connector(c=s) annotation (
@@ -2749,8 +2669,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end LiverInsulin;
 
         model EndogenousGlucoseProduction
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
           parameter Real k_p1=2.7;
           parameter Real k_p2=0.0021;
           parameter Real k_p3=0.009;
@@ -2773,12 +2692,9 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
             Placement(transformation(origin={120,-60}, extent={{-10,-10},{10,10}}),
               iconTransformation(origin={110,0}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction k_i1(k=0.0079) annotation(Placement(transformation(origin={-90,63.2158}, extent={{10,-10},{-10,10}}, rotation=-270)));
-          BioChem.Substances.Substance I_1(c(
-                                           start = 25))
-                                                       annotation(Placement(transformation(origin={-90,40}, extent={{-10,-10},{10,10}})));
+          BioChem.Substances.Substance I_1(c(start = 25)) annotation(Placement(transformation(origin={-90,40}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction k_i2(k=0.0079) annotation(Placement(transformation(origin={-90,10}, extent={{10,-10},{-10,10}}, rotation=-270)));
-          BioChem.Substances.Substance I_d(c(
-                                           start = 25),c=i_d) annotation(Placement(transformation(origin={-90,-10}, extent={{-10,-10},{10,10}})));
+          BioChem.Substances.Substance I_d(c(start = 25),c=i_d) annotation(Placement(transformation(origin={-90,-10}, extent={{-10,-10},{10,10}})));
           BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction k_i3(k=0.0079) annotation(Placement(transformation(origin={-90,-40}, extent={{10,-10},{-10,10}}, rotation=-270)));
           BioChem.Substances.BoundarySubstance End annotation(Placement(transformation(origin={-90,-60}, extent={{-10,-10},{10,10}})));
           BioChem.Substances.SignalSubstance EGP_calc(c=egp_signal) annotation(Placement(transformation(origin={60,40}, extent={{-10,-10},{10,10}})));
@@ -2803,8 +2719,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end EndogenousGlucoseProduction;
 
         model GlucoseRenalExcretion
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
         BioChem.Interfaces.Nodes.ProductConnector productConnector1 annotation (
            Placement(transformation(origin={-120,-4.44089e-16}, extent={{-10,-10},
                   {10,10}}), iconTransformation(origin={-110,3.33067e-16},
@@ -2824,8 +2739,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end GlucoseRenalExcretion;
 
         model UtilizationMuscleTissue
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
         BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation (
             Placement(transformation(origin={-120,50}, extent={{-10,-10},{10,10}}),
               iconTransformation(origin={-110,83.5696}, extent={{-10,-10},{10,
@@ -2843,13 +2757,11 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end UtilizationMuscleTissue;
 
         model TissueGlucose
-          extends BioChem.Compartments.Compartment(V(
-                                                   start = 1.0));
+          extends BioChem.Compartments.Compartment(V(start = 1.0));
         BioChem.Interfaces.Nodes.ProductConnector G_connector annotation (
             Placement(transformation(origin={0,-80}, extent={{-10,-10},{10,10}}),
               iconTransformation(origin={0,-110}, extent={{-10,-10},{10,10}})));
-          BioChem.Substances.Substance G_t(c(
-                                           start = 130))
+          BioChem.Substances.Substance G_t(c(start = 130))
                                                         annotation(Placement(transformation(extent={{-10,-10},{10,10}})));
         BioChem.Interfaces.Nodes.SubstrateConnector U_idf_connector annotation (
            Placement(transformation(origin={120,40}, extent={{-10,-10},{10,10}}),
@@ -2868,26 +2780,15 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         package AdiposeTissue
           extends BioChem.Icons.Library;
           model Adipocyte
-            extends BioChem.Compartments.Compartment(V(
-                                                     start = 1.0));
-            BioChem.Substances.Substance IR(c(
-                                            start = 2340000000000.0))
-                                                                     annotation(Placement(transformation(origin={-110,60}, extent={{-10,-10},{10,10}})));
+            extends BioChem.Compartments.Compartment(V(start = 1.0));
+            BioChem.Substances.Substance IR(c(start = 2340000000000.0)) annotation(Placement(transformation(origin={-110,60}, extent={{-10,-10},{10,10}})));
             BioChem.Substances.SignalSubstance IR_tot annotation(Placement(transformation(origin={110,60}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance IRS1(c(
-                                              start = 16100000000.0))
-                                                                     annotation(Placement(transformation(origin={-80,30}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance IRS1_P(c(
-                                                start = 0))
-                                                           annotation(Placement(transformation(origin={-20,30}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance IRS1(c(start = 16100000000.0)) annotation(Placement(transformation(origin={-80,30}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance IRS1_P(c(start = 0)) annotation(Placement(transformation(origin={-20,30}, extent={{-10,-10},{10,10}})));
             BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.ActivationReaction activationReaction2(k_1=0.038, k_2=580000000) annotation(Placement(transformation(origin={-50,30}, extent={{-10,-10},{10,10}})));
             BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.ActivationReaction activationReaction3(k_1=1.348, k_2=24800000) annotation(Placement(transformation(origin={-20,0}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance PKB(c(
-                                             start = 16800000))
-                                                               annotation(Placement(transformation(origin={-50,0}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance PKB_P(c(
-                                               start = 0))
-                                                          annotation(Placement(transformation(origin={10,0}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance PKB(c(start = 16800000)) annotation(Placement(transformation(origin={-50,0}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance PKB_P(c(start = 0)) annotation(Placement(transformation(origin={10,0}, extent={{-10,-10},{10,10}})));
             BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.ActivationReaction activationReaction4(k_1=0.019, k_2=336000000) annotation(Placement(transformation(origin={10,-30}, extent={{-10,-10},{10,10}})));
             BioChem.Substances.SignalSubstance IRS1_tot annotation(Placement(transformation(origin={110,30}, extent={{-10,-10},{10,10}})));
             BioChem.Substances.SignalSubstance PKB_tot annotation(Placement(transformation(origin={110,0}, extent={{-10,-10},{10,10}})));
@@ -2901,15 +2802,9 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
             annotation (Placement(transformation(origin={-7.77156e-16,-80},
                   extent={{-10,-10},{10,10}}), iconTransformation(origin={-1.22125e-15,
                     -110}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance GLUT4_MEMBRANE(c(
-                                                        start = 0))
-                                                                   annotation(Placement(transformation(origin={40,-30}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance GLUT4_CYTOSOL(c(
-                                                       start = 580000000))
-                                                                          annotation(Placement(transformation(origin={-20,-30}, extent={{-10,-10},{10,10}})));
-            BioChem.Substances.Substance IR_insulin(c(
-                                                    start = 0))
-                                                               annotation(Placement(transformation(origin={-50,60}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance GLUT4_MEMBRANE(c(start = 0)) annotation(Placement(transformation(origin={40,-30}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance GLUT4_CYTOSOL(c(start = 580000000)) annotation(Placement(transformation(origin={-20,-30}, extent={{-10,-10},{10,10}})));
+            BioChem.Substances.Substance IR_insulin(c(start = 0)) annotation(Placement(transformation(origin={-50,60}, extent={{-10,-10},{10,10}})));
             BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.MM_insulin MM_insulin1(k_1=2.464, k_2=54100000000.0, Km=1499) annotation(Placement(transformation(origin={-80,60}, extent={{-10,-10},{10,10}})));
             BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.GlucoseUptakeReaction GlucoseUptake_GLUT4(k=12.435, glut_1=0.071, Km1=0.012, Km4=3462, k_wholebody=2.45) annotation(Placement(transformation(origin={40,-80}, extent={{-10,-10},{10,10}})));
           equation
@@ -2936,8 +2831,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
           end Adipocyte;
 
           model AdiposeTissue
-            extends BioChem.Compartments.Compartment(V(
-                                                     start = 1.0));
+            extends BioChem.Compartments.Compartment(V(start = 1.0));
           BioChem.Interfaces.Nodes.ModifierConnector I_connector annotation (
               Placement(transformation(origin={-120,50}, extent={{-10,-10},{10,
                     10}}), iconTransformation(origin={-110,83.8877}, extent={{-10,
